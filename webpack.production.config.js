@@ -9,8 +9,8 @@ var config = {
     loaders: [
       {
         test: /\.js$/,
-        exclude: "node_modules",
-        loader: 'babel'
+        loaders: ['react-hot', 'babel'],
+        include: path.join(__dirname, 'src')
       },
       {
         test: /.js$/,

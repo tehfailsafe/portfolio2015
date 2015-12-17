@@ -14,9 +14,7 @@ const history = useBasename(createHistory)({
 render(
   <Router history={history}>
     <Route path="/" component={App}>
-      <Route path='/test' component={Test}>
-
-      </Route>
+      <IndexRoute component={Test}/>
     </Route>
   </Router>,
   document.getElementById('app')

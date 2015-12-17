@@ -46,7 +46,8 @@
     "react-hot-loader": "^1.3.0",
     "react-router": "^1.0.2",
     "webpack": "^1.12.2",
-    "webpack-dev-server": "^1.12.1"
+    "webpack-dev-server": "^1.12.1",
+    "wolfy87-eventemitter": "^4.2.0"
   },
   "dependencies": {
     "packery": "^1.4.3",

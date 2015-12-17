@@ -1,5 +1,22 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App.js';
+import React from 'react'
+import { render } from 'react-dom'
+import { createHistory, useBasename } from 'history'
+import CreateBrowserHistory from 'history/lib/createBrowserHistory'
+import { Router, Route } from 'react-router'
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import App from "./App";
+import Test from "./Test2";
+
+
+const history = CreateBrowserHistory();
+
+render(
+  <Router history={history}>
+    <Route path="/" component={App}>
+      <Route path='/test' component={Test}>
+
+      </Route>
+    </Route>
+  </Router>,
+  document.getElementById('app')
+)

@@ -16,7 +16,24 @@ var config = {
         test: /.js$/,
         loader: 'imports?define=>false',
         include: /(fizzy\-ui\-utils|outlayer|get\-size|packery)[\\\/]/
-      }
+      },
+      { test: /\.css?$/, loader: 'style!css' },
+      {
+        test: /\.scss$/,
+        include: /src/,
+        loader: "style!css!sass"
+      },
+      {
+        test: /\.(otf|eot|png|svg|ttf|woff|woff2)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        loader: 'url-loader?limit=8192'
+      },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        loaders: [
+            'url-loader?limit=8192',
+            'img'
+        ]
+      },
     ]
   }
 };

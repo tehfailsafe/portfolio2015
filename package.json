@@ -1,33 +1,15 @@
 {
-  "name": "react-hot-boilerplate",
-  "version": "1.0.0",
-  "description": "Boilerplate for ReactJS project with hot code reloading",
+  "name": "mike-johnson-portfolio-2015",
+  "version": "0.0.1",
+  "description": "Mike Johnson portfolio2015",
   "scripts": {
     "start": "node server.js",
     "lint": "eslint src",
     "deploy": "NODE_ENV=production webpack -p --config webpack.production.config.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gaearon/react-hot-boilerplate.git"
-  },
-  "keywords": [
-    "react",
-    "reactjs",
-    "boilerplate",
-    "hot",
-    "reload",
-    "hmr",
-    "live",
-    "edit",
-    "webpack"
-  ],
-  "author": "Dan Abramov <dan.abramov@me.com> (http://github.com/gaearon)",
+
+  "author": "Mike Johnson",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/gaearon/react-hot-boilerplate/issues"
-  },
-  "homepage": "https://github.com/gaearon/react-hot-boilerplate",
   "devDependencies": {
     "autoprefixer": "^6.2.0",
     "babel-core": "^6.0.20",

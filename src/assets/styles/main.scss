@@ -1,0 +1,10 @@
+.hero{
+  background-color:  #333;
+  background: url(../images/hero_bg.jpg);
+  max-height: 560px;
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}

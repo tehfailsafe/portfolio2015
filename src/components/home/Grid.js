@@ -1,7 +1,7 @@
 import React from 'react';
 import packery from 'packery';
 
-class Test extends React.Component{
+class Grid extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
@@ -45,4 +45,4 @@ class Test extends React.Component{
   }
 }
 
-export default Test;
+export default Grid;

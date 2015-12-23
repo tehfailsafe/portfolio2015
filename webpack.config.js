@@ -31,7 +31,11 @@ module.exports = {
         loaders: ['react-hot', 'babel'],
         include: path.join(__dirname, 'src')
       },
-
+      {
+        test: /.js$/,
+        loader: 'imports?define=>false',
+        include: /(fizzy\-ui\-utils|outlayer|get\-size|packery)[\\\/]/
+      },
       { test: /\.css?$/, loader: 'style!css' },
       {
         test: /\.scss$/,

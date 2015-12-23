@@ -61,22 +61,22 @@ class Index extends React.Component{
       {
         'id': '1',
         'title': 'Audi',
-        'tn': "/assets/images/audi-a7-times-square-v2.jpg"
+        'tn': "assets/images/audi-a7-times-square-v2.jpg"
       },
       {
         'id': '2',
         'title': 'Audi',
-        'tn': "/assets/images/car-distractions.jpg"
+        'tn': "assets/images/car-distractions.jpg"
       },
       {
         'id': '3',
         'title': 'Audi',
-        'tn': "/assets/images/halo4-hero.jpg"
+        'tn': "assets/images/halo4-hero.jpg"
       },
       {
         'id': '4',
         'title': 'Audi',
-        'tn': "/assets/images/cokeJourney.jpg"
+        'tn': "assets/images/cokeJourney.jpg"
       }
 
     ])

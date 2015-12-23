@@ -61,7 +61,7 @@ class Project extends React.Component{
   render(){
     var thumbnailClass = this.state.open ? "thumbnail" : "thumbnail img-fluid"
     return(
-      <div ref="project" className="projectContainer item col-sm-4" style={this.state.containerStyle} onClick={this.onClick.bind(this)}>
+      <div ref="project" className="item col-sm-4 col-xs-12 projectContainer" style={this.state.containerStyle} onClick={this.onClick.bind(this)}>
         <img ref="thumbnail" className={thumbnailClass} style={this.state.thumbnailStyle} src={this.props.project.tn} />
         <div ref="circle" className="circle"/>
       </div>

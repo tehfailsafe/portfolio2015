@@ -37,6 +37,7 @@ html, body{ height: 100%; }
 .projectContainer{
   color: white;
   cursor: pointer;
+
   // display: flex;
   // align-items: center;
   overflow: hidden;
@@ -63,7 +64,7 @@ html, body{ height: 100%; }
     color: white;
     cursor: pointer;
     z-index:2;
-    // position: absolute;
+    position: absolute;
   }
 
   .thumbnail.show{
@@ -71,6 +72,7 @@ html, body{ height: 100%; }
   }
 
 }
+
 
 .row-no-gutter{
   margin-right: 0;

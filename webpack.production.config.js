@@ -5,6 +5,14 @@ var config = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js'
   },
+
+  resolve:{
+    modulesDirectories: ['node_modules'],
+    alias:{
+      "eventEmitter/EventEmitter": "wolfy87-eventemitter"
+    }
+  },
+  
   module: {
     loaders: [
       {

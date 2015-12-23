@@ -1,2 +1,4 @@
-require('./assets/styles/bootstrap.css');
+require('./assets/styles/bootstrap.scss');
+require('./assets/styles/main.scss');
+
 require('./routes');

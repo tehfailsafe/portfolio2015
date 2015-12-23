@@ -3,10 +3,10 @@ import { render } from 'react-dom'
 import { createHistory, useBasename } from 'history'
 import { Router, Route, IndexRoute } from 'react-router'
 
-import App from "./App";
-import Home from "./components/Home";
+import Home from "./App";
 import About from "./components/About";
-import Grid from "./components/home/Grid";
+import Projects from "./components/projects/Projects";
+import Project from "./components/projects/Project";
 
 
 const history = useBasename(createHistory)({
@@ -15,10 +15,8 @@ const history = useBasename(createHistory)({
 
 render(
   <Router history={history}>
-    <Route path="/" component={App}>
-      <IndexRoute component={Home}>
-        <IndexRoute component={Grid} />
-      </IndexRoute>
+    <Route path="/" component={Home}>
+      <IndexRoute component={Projects} />
       <Route path="about" component={About} />
     </Route>
   </Router>,

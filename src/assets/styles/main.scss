@@ -1,10 +1,83 @@
-.hero{
-  background-color:  #333;
-  background: url(../images/hero_bg.jpg);
-  max-height: 560px;
-  min-height: 50vh;
+html{ overflow-y: scroll; }
+
+html, body{ height: 100%; }
+
+.nav-bar{
+  position: absolute;
+  height: 64px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  z-index:1000;
+  width:100%;
+  padding: 0 32px;
+
+  a{
+    color: white;
+  }
+
+  .title{
+    flex: 1;
+  }
+  .nav-links{
+  }
+}
+.hero{
+  background-color: #4E80DE;
+  max-height: 560px;
+  min-height: 50vh;
   color: #fff;
+  overflow: hidden;
+
+  img{
+    min-width: 100%;
+
+  }
+}
+
+.projectContainer{
+  color: white;
+  cursor: pointer;
+  // display: flex;
+  // align-items: center;
+  overflow: hidden;
+  z-index: 1;
+
+  *{
+    pointer-events: none;
+  }
+
+  .circle{
+    width: 100px;
+    height: 100px;
+    background-color: #333;
+    border-radius: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+  }
+
+  .thumbnail {
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+    z-index:2;
+    // position: absolute;
+  }
+
+  .thumbnail.show{
+    cursor: default;
+  }
+
+}
+
+.row-no-gutter{
+  margin-right: 0;
+  margin-left: 0;
+
+  [class*="col-"] {
+    padding-right: 0;
+    padding-left: 0;
+  }
 }

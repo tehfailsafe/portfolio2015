@@ -16,6 +16,14 @@ module.exports = {
   plugins: [
     new webpack.HotModuleReplacementPlugin()
   ],
+
+  resolve:{
+    modulesDirectories: ['node_modules'],
+    alias:{
+      "eventEmitter/EventEmitter": "wolfy87-eventemitter"
+    }
+  },
+
   module: {
     loaders: [
       {
@@ -23,11 +31,7 @@ module.exports = {
         loaders: ['react-hot', 'babel'],
         include: path.join(__dirname, 'src')
       },
-      {
-        test: /.js$/,
-        loader: 'imports?define=>false',
-        include: /(fizzy\-ui\-utils|outlayer|get\-size|packery)[\\\/]/
-      },
+
       { test: /\.css?$/, loader: 'style!css' },
       {
         test: /\.scss$/,

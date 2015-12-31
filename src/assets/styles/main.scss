@@ -48,8 +48,8 @@ html, body{ height: 100%; }
   }
 
   .circle{
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
     background-color: #333;
     border-radius: 100%;
     position: absolute;
@@ -58,13 +58,18 @@ html, body{ height: 100%; }
     z-index: 1;
 
   }
-
-  .thumbnail {
-    background-color: #333;
-    color: white;
-    cursor: pointer;
-    z-index:2;
+  .white-bg{
+    background-color: #fff;
     position: absolute;
+  }
+  .thumbnail {
+
+  }
+
+  .thumbnailContainer{
+    position: absolute;
+    z-index:2;
+    cursor: pointer;
   }
 
   .thumbnail.show{

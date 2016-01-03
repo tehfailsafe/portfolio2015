@@ -56,7 +56,7 @@ const Index = React.createClass({
   openItem(){
     var pos = this.state.originalPos
     TweenMax.set(this.refs.circle, {css:{zIndex: 2, top: pos.y + pos.h / 2 - 100, left: pos.x + pos.w / 2 - 100, scale: 0}})
-    TweenMax.set(this.state.activeItem, {css: {zIndex: 3}})
+    TweenMax.set(this.state.activeItem, {css: {zIndex: 3, position: "relative"}})
 
     TweenMax.to(this.refs.circle, .45, { scale: 15, borderRadius: 0, ease: Circ.easeIn, onComplete: () => {
       this.setState({open: true})
@@ -84,17 +84,19 @@ const Index = React.createClass({
   render(){
 		var projectId = this.props.params.projectId
     var projects = this.getJson().map((project) => {
-			var isActive = false
+      var isActive = false
 			if(this.props.params.projectId){
 				isActive = this.props.params.projectId == project.id;
 			}
 
       return(
-				<div ref={project.id} key={project.id} className="item col-sm-4 col-xs-12">
+				<div ref={project.id}  key={project.id} className="item col-sm-4 col-xs-12">
 					<Link to={isActive ? '/' : '/projects/' + project.id} activeClassName="open">
-            <img src={`assets/images/${project.tn}`} className="thumbnail"/>
+            <img src={`/assets/images/${project.tn}`} className="thumbnail"/>
 					</Link>
-					{isActive ? React.cloneElement(this.props.children, { project: project }): null}
+
+            {isActive ? React.cloneElement(this.props.children, { project: project }): null}
+
 				</div>
       )
     })
@@ -104,9 +106,11 @@ const Index = React.createClass({
         <Header />
         <div ref="projectsGrid" className="projectsGrid">
           <div className="circle" ref="circle"/>
-          <div className='row grid'>
-            {projects}
-          </div>
+
+            <div className='row grid'>
+              {projects}
+            </div>
+
         </div>
       </div>
     )

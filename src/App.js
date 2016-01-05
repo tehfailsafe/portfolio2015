@@ -8,9 +8,9 @@ export default class App extends Component {
     return (
       <div className="">
         <div className="nav-bar">
-          <Link to="/projects" className="title">Mike Johnson</Link>
+          <Link to="/" className="title">Mike Johnson</Link>
           <div className="nav-links">
-            <Link to="about">About</Link>
+            <Link to="/about">About</Link>
           </div>
         </div>
         {this.props.children }

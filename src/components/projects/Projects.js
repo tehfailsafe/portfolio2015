@@ -18,39 +18,38 @@ const Index = React.createClass({
   },
 
 	componentDidMount(){
-    imagesLoaded( this.refs.projectsGrid, () => {
+    imagesLoaded( this.refs.grid, () => {
       this.state.packary.layout();
     })
 
     this.setState({
-      packary: new Packery(document.querySelector('.grid'), {
+      packary: new Packery(this.refs.grid, {
         itemSelector: ".item",
-        transitionDuration: "0s"
+        transitionDuration: "0s",
+        gutter: 0
       })
     })
   },
 
   componentWillReceiveProps(props){
-    if(props.params.projectId){
-      var activeItem = this.refs[props.params.projectId]
-      this.setState({
-        activeItem: activeItem,
-        originalPos: {x: activeItem.offsetLeft, y: activeItem.offsetTop, h: activeItem.offsetHeight, w: activeItem.offsetWidth},
-        gridPos: this.getPos(this.refs.projectsGrid)
-      })
-    }
+    if(!props.params.projectId) return
+    var activeItem = this.refs[props.params.projectId]
+    this.setState({
+      activeItem: activeItem,
+      originalPos: this.getPos(activeItem),
+    })
   },
 
   componentDidUpdate(){
     // if we're on a project route and not already open, open it
-    if(this.props.params.projectId && !this.state.open){
-      this.openItem();
-		}
-
-    // if we're at projects index and there is an open item, transition it
-		if(!this.props.params.projectId && this.state.open){
-      this.closeItem();
-		}
+    // if(this.props.params.projectId && !this.state.open){
+    //   this.openItem();
+		// }
+    //
+    // // if we're at projects index and there is an open item, transition it
+		// if(!this.props.params.projectId && this.state.open){
+    //   this.closeItem();
+		// }
   },
 
   openItem(){
@@ -90,12 +89,12 @@ const Index = React.createClass({
 			}
 
       return(
-				<div ref={project.id}  key={project.id} className="item col-sm-4 col-xs-12">
+				<div ref={project.id}  key={project.id} className={`item col-sm-4 col-xs-12 ${isActive ? "active" : ""}`}>
 					<Link to={isActive ? '/' : '/projects/' + project.id} activeClassName="open">
             <img src={`/assets/images/${project.tn}`} className="thumbnail"/>
 					</Link>
 
-            {isActive ? React.cloneElement(this.props.children, { project: project }): null}
+            {isActive ? React.cloneElement(this.props.children, { project: project, pos: this.state.originalPos  }): null}
 
 				</div>
       )
@@ -104,14 +103,9 @@ const Index = React.createClass({
     return(
       <div className="projects-index">
         <Header />
-        <div ref="projectsGrid" className="projectsGrid">
-          <div className="circle" ref="circle"/>
-
-            <div className='row grid'>
-              {projects}
-            </div>
-
-        </div>
+          <div ref="grid" className='row no-gutters grid'>
+            {projects}
+          </div>
       </div>
     )
   },
@@ -120,22 +114,22 @@ const Index = React.createClass({
     // placeholder for remote api call later
     return ([
       {
-        'id': '1',
+        'id': 'Audi',
         'title': 'Audi',
         'tn': 'audi-a7-times-square-v2.jpg'
       },
       {
-        'id': '2',
+        'id': 'ConnectedCar',
         'title': 'Microsoft Connected Car',
         'tn': 'car-distractions.jpg'
       },
       {
-        'id': '3',
+        'id': 'CokeJourney',
         'title': 'Coke Journeys',
         'tn': 'cokeJourney.jpg'
       },
       {
-        'id': '4',
+        'id': 'Halo4',
         'title': 'Halo 4',
         'tn': 'halo4-hero.jpg'
       }

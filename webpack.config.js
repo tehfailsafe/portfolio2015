@@ -47,6 +47,10 @@ module.exports = {
         loader: 'url-loader?limit=8192'
       },
       {
+        test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        loader: "file-loader"
+      },
+      {
         test: /\.(jpe?g|png|gif|svg)$/i,
         loaders: [
             'url-loader?limit=8192',

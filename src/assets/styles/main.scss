@@ -1,4 +1,12 @@
-html{ overflow-y: scroll; }
+// html{ overflow-y: scroll; }
+body.noscroll{
+  position: fixed;
+  overflow-y: scroll;
+  width: 100%;
+}
+body{
+  overflow-y: scroll
+}
 html, body{ height: 100%; }
 
 .nav-bar{
@@ -6,9 +14,9 @@ html, body{ height: 100%; }
   height: 64px;
   display: flex;
   align-items: center;
-  z-index:10;
+  z-index:100;
   width:100%;
-  padding: 0 32px;
+  padding: 0px;
 
   a{
     color: white;
@@ -20,6 +28,15 @@ html, body{ height: 100%; }
   .nav-links{
   }
 }
+
+.nav-bar.right{
+  flex-direction: row-reverse;
+  .back{
+    background-color: rgba(0,0,0,0.3);
+    padding:20px;
+  }
+}
+
 .hero{
   background-color: #4E80DE;
   max-height: 560px;
@@ -37,7 +54,7 @@ html, body{ height: 100%; }
     line-height: 1.25;
   }
 }
-body{ background-color: #38f; }
+body{ background-color: #333; }
 
 html, body, #app { height: 100%;}
 .projects-index{
@@ -64,7 +81,7 @@ html, body, #app { height: 100%;}
   left: 0;
   right: 0;
   bottom: 0;
-  z-index:100;
+  z-index:1;
   vertical-align: middle;
 }
 
@@ -119,16 +136,37 @@ html, body, #app { height: 100%;}
   }
 }
 
+
+.projectShow{
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 100%;
+  width:calc(100% + 16px);
+}
+
 .project.container{
-  top: 200px;
+  top: 256px;
   position: relative;
+
+  .header{
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background-color: white;
+    width: 100%;
+    position: absolute;
+
+    h1{
+      font-size: 32px;
+    }
+  }
 
   .imageHolder{
     overflow:hidden;
     position: relative;
-    height: 400px;
+    // height: 400px;
     width: 100%;
-    z-index:100;
+    z-index:101;
 
     img{
       position: absolute;
@@ -148,10 +186,50 @@ html, body, #app { height: 100%;}
     overflow:hidden;
     min-height: 0;
     z-index: 99;
+    // padding-top: 64px;
     // margin-top: 450px;
+    .section{
+      margin-top: 80px;
+      margin-bottom: 80px;
+    }
+
+    .left-column{
+      color: #3e4c5e;
+      font-size: 45px;
+      font-weight: 500;
+      line-height: 56px;
+    }
+
+    .right-column{
+      color: #8d969d;
+      font-size: 22px;
+      font-weight: 300;
+      line-height: 38px;
+
+    }
+    .video{
+      margin-bottom: 20px;
+      position: relative;
+
+      iframe{
+        width:100%;
+        height:100%;
+      }
+    }
   }
 }
 .row.no-gutters > [class*="col-"] {
   padding-right: 0;
   padding-left: 0;
+}
+
+
+
+.particles{
+  height: 100px;
+  width: 100%;
+  position:absolute;
+}
+.col-sm-12{
+  padding: 0 48px;
 }

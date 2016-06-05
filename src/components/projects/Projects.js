@@ -129,7 +129,7 @@ const Index = React.createClass({
       {
         'id': 'CokeJourney',
         'title': 'Coke Journeys',
-        'tn': 'CokeJourney.jpg',
+        'tn': 'Coke_Journey.jpg',
         'color': '#800005'
       },
       {

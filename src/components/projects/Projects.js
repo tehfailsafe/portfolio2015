@@ -95,7 +95,7 @@ const Index = React.createClass({
       return(
 				<div ref={project.id}  key={project.id} className={`item col-sm-4 col-xs-12 col-xl-3 ${isActive ? "active" : ""}`}>
 					<Link to={isActive ? '/' : '/projects/' + project.id} activeClassName="open">
-            <img src={`/assets/images/${project.tn}`} className="thumbnail"/>
+            <img src={`assets/images/${project.tn}`} className="thumbnail"/>
 					</Link>
             {isActive ? React.cloneElement(this.props.children, { project: project, pos: this.state.originalPos  }): null}
 				</div>

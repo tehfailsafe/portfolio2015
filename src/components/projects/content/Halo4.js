@@ -6,7 +6,7 @@ const Audi = React.createClass({
       <div>
         <div className="row section">
           <div id="particles-js" className="particles"></div>
-          <div className="left-column col-sm-5"><span className="red">We love</span> to create simple and intuitive projects</div>
+          <div className="left-column col-sm-5"><span style={{color: "red"}}>We love</span> to create simple and intuitive projects</div>
           <div className="right-column col-sm-7 roboto">We have a studio with a full range of services. Our clients are Yell, 2do2go, Naked Science, EUA, Kr. We love to create intuitive products for companies, start-ups and ordinary people like us.</div>
         </div>
         <p className="lead">

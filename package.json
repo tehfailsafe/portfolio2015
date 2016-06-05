@@ -1,7 +1,7 @@
 {
-  "name": "mike-johnson-portfolio-2015",
+  "name": "mike-johnson-portfolio-react",
   "version": "0.0.1",
-  "description": "Mike Johnson portfolio2015",
+  "description": "Mike Johnson portfolioReact",
   "scripts": {
     "start": "node server.js",
     "lint": "eslint src",

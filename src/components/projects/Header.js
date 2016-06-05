@@ -29,7 +29,7 @@ const Header = React.createClass({
     } else {
       var content = (
         <div>
-          <img onClick={this.togglePlay} src="../../assets/images/play_icon.png" style={{marginBottom: 30, width: "20%", cursor: "pointer"}}/>
+          <img onClick={this.togglePlay} src="assets/images/play_icon.png" style={{marginBottom: 30, width: "20%", cursor: "pointer"}}/>
           <p className="lead">UX Designgeneer based in Seattle</p>
         </div>
       )

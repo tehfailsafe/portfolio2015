@@ -110,9 +110,7 @@ const Project = React.createClass({
     })
     // add Body class fixed position to prevent scrolling when content is open
     document.getElementsByTagName('body')[0].className = "noscroll";
-    particlesJS.load('particles-js', '/assets/particles.json', function() {
-      console.log('callback - particles.js config loaded');
-    });
+    particlesJS.load('particles-js', 'assets/particles.json');
   },
 
   transitionOutComplete(path){
@@ -180,13 +178,13 @@ const Project = React.createClass({
           <div className="nav-bar right">
             <div ref="back" >
               <Link to="/" ref="back" >
-                <img src="/assets/images/back.png" className="back"/>
+                <img src="assets/images/back.png" className="back"/>
               </Link>
             </div>
           </div>
 
           <div className="imageHolder">
-            <img ref="background" className="backgroundImage" src={`/assets/images/backgrounds/${this.props.project.id}.jpg`} />
+            <img ref="background" className="backgroundImage" src={`assets/images/backgrounds/${this.props.project.id}.jpg`} />
           </div>
           <div ref="circle" className="circle"></div>
 
@@ -200,7 +198,7 @@ const Project = React.createClass({
                     </div>
                   </div>
                   <div  className="imageHolder">
-                    <img ref="thumbnail" className="img-fluid" src={`/assets/images/${this.props.project.tn}`} />
+                    <img ref="thumbnail" className="img-fluid" src={`assets/images/${this.props.project.tn}`} />
                   </div>
                   <div ref="content" className="content col-sm-12">
                     <br/><br/>

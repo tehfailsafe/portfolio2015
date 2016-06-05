@@ -1,3 +1,5 @@
+@import "dimensions.css";
+
 // html{ overflow-y: scroll; }
 body.noscroll{
   position: fixed;
@@ -155,9 +157,18 @@ html, body, #app { height: 100%;}
     background-color: white;
     width: 100%;
     position: absolute;
+    padding-top: 128px;
 
-    h1{
-      font-size: 32px;
+    .title{
+      font-size: 48px;
+      font-weight: 300;
+      letter-spacing: -1.7px;
+      height: 80px;
+    }
+
+    .subtitle{
+      height: 28px;
+      font-size: 20px;
     }
   }
 
@@ -223,7 +234,9 @@ html, body, #app { height: 100%;}
   padding-left: 0;
 }
 
-
+.montserrat{
+  font-family: 'Montserrat', sans-serif;
+}
 
 .particles{
   height: 100px;

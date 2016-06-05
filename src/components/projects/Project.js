@@ -41,20 +41,23 @@ const Project = React.createClass({
     if(!pos.hasOwnProperty("x")) pos = {x: this.refs.container.offsetLeft, y: this.refs.container.offsetTop, h: this.refs.container.offsetHeight, w: this.refs.container.offsetWidth}
     var containerPos = {x: this.refs.container.offsetLeft, y: this.refs.container.offsetTop + this.state.scrollTop}
 
-    this.animateCircle(pos, 0.65);
+    this.animateCircle(pos, 0.5);
     TweenMax.from(this.refs.back, .3, { opacity: 0, delay: .5})
+
     TweenMax.set(this.refs.header, {height: 0})
-    TweenMax.to(this.refs.header, 0.5, {height: 100, y: -100, ease: Power2.easeOut, delay: 0.5})
+    TweenMax.to(this.refs.header, 0.5, {height: 256, y: -256, ease: Power2.easeOut, delay: 0.5})
 
     TweenMax.set(this.refs.content, {height: "auto"})
     TweenMax.from(this.refs.content, 0.35, {height: 0, ease: Power2.easeInOut, delay: 0.5})
 
-    TweenMax.to(this.refs.circle, 0.55, {opacity: 0, delay: .75})
-    TweenMax.from(this.refs.background, 0, {opacity: 0, delay: .75})
+    TweenMax.to(this.refs.circle, 0.55, {opacity: 0, delay: .45})
+    TweenMax.from(this.refs.background, 0, {opacity: 0, delay: .45})
 
-    TweenMax.fromTo(this.refs.projectContainer, 0.75,
+
+
+    TweenMax.fromTo(this.refs.projectContainer, .9,
       { top: pos.y - containerPos.y, left: pos.x - containerPos.x, width: pos.w, height: pos.h},
-      { width: "100%", top: 0, left: 0, height: 600, ease: Power2.easeInOut, delay: 0, onComplete: this.transitionInComplete })
+      { width: "100%", top: 0, left: 0, ease: Power2.easeInOut, delay: 0, onComplete: this.transitionInComplete })
   },
 
 
@@ -65,15 +68,15 @@ const Project = React.createClass({
 // -------------------------------------- //
 
   transitionOut(path){
-    this.setState({open: false})
+
     document.getElementsByTagName('body')[0].className = ""; // revove the fixed position on body to allow scrolling
     window.scrollTo(0, this.state.scrollTop) // scroll back to original scroll position
 
     // Need to add a delay so we can scroll the project content back to top before closing project
     var delay = 0;
     TweenMax.to(this.refs.back, .15, { opacity: 0})
-    if(this.refs.projectShow.scrollTop > 0) delay = .3;
-    TweenMax.to(this.refs.projectShow, .5, { scrollTop: 0, ease: Power2.easeIn});
+    if(this.refs.projectShow.scrollTop > 0) delay = .35;
+    TweenMax.to(this.refs.projectShow, .75, { scrollTop: 0, ease: Power2.easeInOut});
 
     // TODO
     // Figure out what to do when the user is deeplinked, no props.pos comes in from parent...
@@ -85,16 +88,17 @@ const Project = React.createClass({
     TweenMax.to(this.refs.header, 0.35, {height: 0, y: 0, ease: Power2.easeOut, delay: delay + .1})
 
     //fade circle up and hide
-    TweenMax.to(this.refs.circle, .15, {opacity: 1, delay: delay, onComplete: ()=>{
+    TweenMax.to(this.refs.circle, .15, {opacity: 1, delay: delay + 0.0, ease: Power2.easeOut, onComplete: ()=>{
       TweenMax.set(this.refs.background, {opacity: 0})
     }})
 
-    // scale the circle back down
-    TweenMax.to(this.refs.circle, .55, {scale: 0, ease: Power2.easeInOut, delay: delay + 0.15 })
-
     // slide the project back to it's original thumbnail position
-    TweenMax.to(this.refs.projectContainer, .65, { top: pos.y - containerPos.y, left: pos.x - containerPos.x , width: pos.w, height: pos.h, ease: Power2.easeInOut, delay: delay + 0, onComplete: ()=>{
+    TweenMax.to(this.refs.projectContainer, .5, { top: pos.y - containerPos.y, left: pos.x - containerPos.x , width: pos.w, height: pos.h, ease: Power1.easeInOut, delay: delay + 0});
+
+    // scale the circle back down
+    TweenMax.to(this.refs.circle, .5, {scale: 0, ease: Power2.easeOut, delay: delay + 0.25, onComplete: ()=>{
       this.transitionOutComplete(path)
+
     }})
   },
 
@@ -109,12 +113,12 @@ const Project = React.createClass({
       open: true
     })
     // add Body class fixed position to prevent scrolling when content is open
-    document.getElementsByTagName('body')[0].className = "noscroll";
-    particlesJS.load('particles-js', 'assets/particles.json');
+    //document.getElementsByTagName('body')[0].className = "noscroll";
+    //particlesJS.load('particles-js', 'assets/particles.json');
   },
 
   transitionOutComplete(path){
-
+    this.setState({open: false})
 
     // force router to path after transition out
     this.context.router.push(path)
@@ -154,14 +158,14 @@ const Project = React.createClass({
       top: centerPoint.y - radius,
       left: centerPoint.x - radius,
 
-      scale: 0,
+      scale: (pos.h)/(radius*2),
       backgroundColor: this.props.project.color
     })
 
     // animate scale to maintain centerpoint
     TweenMax.to(this.refs.circle, time, {
       scale: 1,
-      ease: Power1.easeOut
+      ease: Quad.easeIn
     })
   },
 
@@ -194,15 +198,17 @@ const Project = React.createClass({
                 <div ref="projectContainer" style={{position: "relative"}}>
                   <div ref="header" className="header">
                     <div className="col-sm-12">
+                      <div className="subtitle montserrat ">Google Play<span className="c-light w-300 m-l-11">APRIL 2016</span></div>
+                      <div className="title montserrat">{this.props.project.title}</div>
                       <h1>{this.props.project.title}</h1>
                     </div>
                   </div>
                   <div  className="imageHolder">
-                    <img ref="thumbnail" className="img-fluid" src={`assets/images/${this.props.project.tn}`} />
+                    <img ref="thumbnail" className="img-fluid" src={`assets/images/${this.props.project.id}.jpg`} />
                   </div>
                   <div ref="content" className="content col-sm-12">
                     <br/><br/>
-                    <Subcontent />
+                    <Subcontent open={this.state.open}/>
                   </div>
                 </div>
               </div>

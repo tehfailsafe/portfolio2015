@@ -1,3 +1,6 @@
+@import "_custom-variables";
+
+
 // html{ overflow-y: scroll; }
 body.noscroll{
   position: fixed;
@@ -88,6 +91,7 @@ html, body, #app { height: 100%;}
 .video{
   position: absolute;
   min-width: 100%;
+  width: 100%;
   top: 0;
   left: 0;
   z-index: 11;
@@ -149,8 +153,6 @@ html, body, #app { height: 100%;}
   position: relative;
 
   .header{
-    display: flex;
-    align-items: center;
     overflow: hidden;
     background-color: white;
     width: 100%;
@@ -162,11 +164,13 @@ html, body, #app { height: 100%;}
       font-weight: 300;
       letter-spacing: -1.7px;
       height: 80px;
+      color: $darkGrey;
     }
 
     .subtitle{
-      height: 28px;
+      height: 16px;
       font-size: 20px;
+      color: $mediumGrey;
     }
   }
 
@@ -192,7 +196,7 @@ html, body, #app { height: 100%;}
   .content{
     display: block;
     background-color: white;
-    overflow:hidden;
+    //overflow:hidden;
     min-height: 0;
     z-index: 99;
     // padding-top: 64px;
@@ -202,27 +206,32 @@ html, body, #app { height: 100%;}
       margin-bottom: 80px;
     }
 
-    .left-column{
-      color: #3e4c5e;
+    .bigTitle{
+      color: $darkGrey;
       font-size: 45px;
       font-weight: 500;
       line-height: 56px;
     }
 
-    .right-column{
-      color: #8d969d;
+    .bigBody{
+      color: $mediumGrey;
       font-size: 22px;
       font-weight: 300;
       line-height: 38px;
-
     }
+
+    .bodyHeader{
+      margin-top: 40px; line-height: 28px; font-size: 20px; font-weight: 300; color: $darkGrey;
+    }
+
+    .body{ margin-top: 20px; font-size: 20px; color: $mediumGrey; line-height: 32px;}
+
     .video{
       margin-bottom: 20px;
-      position: relative;
+      position:relative; padding-top: 56%;
 
       iframe{
-        width:100%;
-        height:100%;
+        position:absolute;top:0;left:0;width:100%; height:100%;
       }
     }
   }
@@ -232,9 +241,8 @@ html, body, #app { height: 100%;}
   padding-left: 0;
 }
 
-.montserrat{
-  font-family: 'Montserrat', sans-serif;
-}
+.montserrat{ font-family: 'Montserrat', sans-serif; font-weight: 700;}
+.roboto{ font-family: 'Roboto', sans-serif; font-weight: 300;}
 
 .particles{
   height: 100px;
@@ -243,4 +251,8 @@ html, body, #app { height: 100%;}
 }
 .col-sm-12{
   padding: 0 48px;
+}
+
+.right{
+  text-align: right;
 }

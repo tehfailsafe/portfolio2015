@@ -109,9 +109,7 @@ const Project = React.createClass({
 // -------------------------------------- //
 
   transitionInComplete(){
-    this.setState({
-      open: true
-    })
+    this.setState({ open: true })
     // add Body class fixed position to prevent scrolling when content is open
     //document.getElementsByTagName('body')[0].className = "noscroll";
     //particlesJS.load('particles-js', 'assets/particles.json');
@@ -198,12 +196,11 @@ const Project = React.createClass({
                 <div ref="projectContainer" style={{position: "relative"}}>
                   <div ref="header" className="header">
                     <div className="col-sm-12">
-                      <div className="subtitle montserrat ">Google Play<span className="c-light w-300 m-l-11">APRIL 2016</span></div>
+                      <div className="subtitle montserrat">{this.props.project.subtitle}</div>
                       <div className="title montserrat">{this.props.project.title}</div>
-                      <h1>{this.props.project.title}</h1>
                     </div>
                   </div>
-                  <div  className="imageHolder">
+                  <div className="imageHolder">
                     <img ref="thumbnail" className="img-fluid" src={`assets/images/${this.props.project.id}.jpg`} />
                   </div>
                   <div ref="content" className="content col-sm-12">

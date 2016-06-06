@@ -68,7 +68,7 @@ const Project = React.createClass({
 // -------------------------------------- //
 
   transitionOut(path){
-
+    this.setState({open: false})
     document.getElementsByTagName('body')[0].className = ""; // revove the fixed position on body to allow scrolling
     window.scrollTo(0, this.state.scrollTop) // scroll back to original scroll position
 
@@ -116,7 +116,7 @@ const Project = React.createClass({
   },
 
   transitionOutComplete(path){
-    this.setState({open: false})
+
 
     // force router to path after transition out
     this.context.router.push(path)
@@ -203,7 +203,7 @@ const Project = React.createClass({
                   <div className="imageHolder">
                     <img ref="thumbnail" className="img-fluid" src={`assets/images/${this.props.project.id}.jpg`} />
                   </div>
-                  <div ref="content" className="content col-sm-12">
+                  <div ref="content" className="content col-sm-12" style={{ overflow: this.state.open ? "visible" : "hidden"}}>
                     <br/><br/>
                     <Subcontent open={this.state.open}/>
                   </div>

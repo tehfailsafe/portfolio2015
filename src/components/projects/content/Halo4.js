@@ -9,8 +9,8 @@ export default React.createClass({
       <div>
         <div className="row section">
           <div id="particles-js" className="particles"></div>
-          <div className="col-sm-5 bigTitle"><span style={{color: "red"}}>We love</span> to create simple and intuitive projects</div>
-          <div className="col-sm-7 body roboto">We have a studio with a full range of services. Our clients are Yell, 2do2go, Naked Science, EUA, Kr. We love to create intuitive products for companies, start-ups and ordinary people like us.</div>
+          <div className="col-sm-5 bigTitle">A<span style={{color: "red"}}> new interface</span> from the ground up.</div>
+          <div className="col-sm-7 body roboto">Halo 4 is 343 Industries first original title within the Halo series—previously, development of the main series was undertaken by Bungie, the creator of the franchise. In the developmental process, 343 Industries decided to explore the Forerunner fiction within the Halo universe, leading the team to design a new setting, enemies, and main antagonist.</div>
         </div>
         <div className="row section">
           <div className="col-sm-9">

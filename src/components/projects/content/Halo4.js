@@ -13,6 +13,7 @@ import VideoPlayer from '../show/VideoPlayer'
 
 export default React.createClass({
   render(){
+    var imagePath = "assets/images/Halo4"
     return (
       <div className="content" style={{overflow: "hidden"}}>
         <Section>
@@ -32,10 +33,10 @@ export default React.createClass({
           <SectionHeader title="Main Menu" subtitle="01"/>
         </Section>
 
-        <ImageFull src="assets/images/halo4/menu1.jpg"/>
-        <ImageFull src="assets/images/halo4/menu2.jpg"/>
-        <VideoPlayer src="assets/images/halo4/menu2.mp4"/>
-        <ImageFull src="assets/images/halo4/menu3.jpg"/>
+        <ImageFull src={`${imagePath}/menu1.jpg`} />
+        <ImageFull src={`${imagePath}/menu2.jpg`} />
+        <ImageFull src={`${imagePath}/menu3.jpg`} />
+        <VideoPlayer src={`${imagePath}/menu2.mp4`}/>
       </div>
     )
   }

@@ -22,8 +22,8 @@ render(
     <Route path="" component={App}>
       <Route path="/" component={Projects}>
         <Route path="projects/:projectId" component={Project}/>
-        <Route path="reel" component={Reel} />
       </Route>
+      <Route path="reel" component={Reel} />
       <Route path="about" component={About} />
     </Route>
   </Router>,

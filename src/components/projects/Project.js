@@ -44,15 +44,16 @@ const Project = React.createClass({
     this.animateCircle(pos, 0.5);
     TweenMax.from(this.refs.back, .3, { opacity: 0, delay: .5})
 
-    TweenMax.set(this.refs.header, {height: 0})
-    TweenMax.to(this.refs.header, 0.5, {height: 256, y: -256, ease: Power2.easeOut, delay: 0.5})
-
-    TweenMax.set(this.refs.content, {height: "auto"})
-    TweenMax.from(this.refs.content, 0.35, {height: 0, ease: Power2.easeInOut, delay: 0.5})
-
     TweenMax.to(this.refs.circle, 0.55, {opacity: 0, delay: .45})
     TweenMax.from(this.refs.background, 0, {opacity: 0, delay: .45})
 
+    TweenMax.set(this.refs.header, {height: 0})
+    TweenMax.to(this.refs.header, 0.5, {height: 256, y: -256, ease: Power2.easeOut, delay: 0.5})
+
+    TweenMax.set(this.refs.content, {height: 600})
+    TweenMax.from(this.refs.content, 0.45, {height: 0, ease: Power2.easeInOut, delay: 0.5, onComplete: ()=>{
+      TweenMax.set(this.refs.content, {height: "auto"})
+    }})
 
 
     TweenMax.fromTo(this.refs.projectContainer, .9,
@@ -69,6 +70,7 @@ const Project = React.createClass({
 
   transitionOut(path){
     this.setState({open: false})
+    console.log(this.refs.header);
     document.getElementsByTagName('body')[0].className = ""; // revove the fixed position on body to allow scrolling
     window.scrollTo(0, this.state.scrollTop) // scroll back to original scroll position
 
@@ -116,8 +118,6 @@ const Project = React.createClass({
   },
 
   transitionOutComplete(path){
-
-
     // force router to path after transition out
     this.context.router.push(path)
   },
@@ -174,7 +174,7 @@ const Project = React.createClass({
 // -------------------------------------- //
   render(){
     var Subcontent = Content[this.props.project.id]
-
+    var projectPath = `assets/images/${this.props.project.id}`;
     return(
       <div style={{position:"fixed", top: 0, left: 0, width:"100%", height: "100%"}} >
           <div className="nav-bar right">
@@ -186,7 +186,7 @@ const Project = React.createClass({
           </div>
 
           <div className="imageHolder">
-            <img ref="background" className="backgroundImage" src={`assets/images/backgrounds/${this.props.project.id}.jpg`} />
+            <img ref="background" className="backgroundImage" src={`${projectPath}/background.jpg`} />
           </div>
           <div ref="circle" className="circle"></div>
 
@@ -195,18 +195,17 @@ const Project = React.createClass({
               <div  className="row">
                 <div ref="projectContainer" style={{position: "relative"}}>
                   <div ref="header" className="header">
-                    <div className="col-sm-12">
-                      <div className="subtitle montserrat">{this.props.project.subtitle}</div>
-                      <div className="title montserrat">{this.props.project.title}</div>
-                    </div>
+                    <img src={`${projectPath}/header.png`} />
                   </div>
+
                   <div className="imageHolder">
-                    <img ref="thumbnail" className="img-fluid" src={`assets/images/${this.props.project.id}.jpg`} />
+                    <img ref="thumbnail" className="img-fluid" src={`${projectPath}/hero.jpg`} />
                   </div>
-                  <div ref="content" className="content col-sm-12" style={{ overflow: this.state.open ? "visible" : "hidden"}}>
-                    <br/><br/>
+
+                  <div ref="content" className="content" style={{ overflow: this.state.open ? "visible" : "hidden"}}>
                     <Subcontent open={this.state.open}/>
                   </div>
+
                 </div>
               </div>
             </div>

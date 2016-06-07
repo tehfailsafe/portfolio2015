@@ -3,7 +3,7 @@ import {Link} from 'react-router'
 // import {VictoryPie} from 'victory'
 
 import Projects from './components/projects/Projects';
-import Header from './components/projects/Header';
+import Header from './components/Header';
 
 export default class App extends Component {
   render() {
@@ -15,7 +15,7 @@ export default class App extends Component {
             <Link to="/about">About</Link>
           </div>
         </div>
-
+        <Header />
         {this.props.children }
       </div>
     );

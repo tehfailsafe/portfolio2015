@@ -1,5 +1,4 @@
 import React from 'react';
-import particles from 'particles.js';
 import Carousel from 'nuka-carousel';
 import Breakout from '../../Breakout';
 

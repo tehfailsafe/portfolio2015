@@ -1,23 +1,23 @@
 {
   "particles": {
     "number": {
-      "value": 33,
+      "value": 80,
       "density": {
         "enable": true,
-        "value_area": 200
+        "value_area": 600
       }
     },
     "color": {
-      "value": "#333333"
+      "value": "#fff"
     },
     "shape": {
       "type": "circle",
       "stroke": {
         "width": 0,
-        "color": "#000000"
+        "color": "#fff"
       },
       "polygon": {
-        "nb_sides": 5
+        "nb_sides": 2
       },
       "image": {
         "src": "img/github.svg",
@@ -26,7 +26,7 @@
       }
     },
     "opacity": {
-      "value": 0.5,
+      "value": 0.35,
       "random": false,
       "anim": {
         "enable": false,
@@ -36,7 +36,7 @@
       }
     },
     "size": {
-      "value": 3,
+      "value": 2,
       "random": true,
       "anim": {
         "enable": false,
@@ -47,10 +47,10 @@
     },
     "line_linked": {
       "enable": true,
-      "distance": 150,
-      "color": "#333",
-      "opacity": 0.2,
-      "width": 1
+      "distance": 200,
+      "color": "#fff",
+      "opacity": 0.25,
+      "width": 0.5
     },
     "move": {
       "enable": true,
@@ -58,7 +58,7 @@
       "direction": "none",
       "random": false,
       "straight": false,
-      "out_mode": "out",
+      "out_mode": "boune",
       "bounce": false,
       "attract": {
         "enable": true,
@@ -76,7 +76,7 @@
       },
       "onclick": {
         "enable": true,
-        "mode": "push"
+        "mode": "repulse"
       },
       "resize": true
     },

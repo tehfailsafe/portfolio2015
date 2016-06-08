@@ -1,11 +1,16 @@
 import React from 'react';
 import Reel from './Reel';
+import particles from 'particles.js';
 
 const Header = React.createClass({
   getInitialState(){
     return({
       playing: false
     })
+  },
+
+  componentDidMount(){
+    particlesJS.load('particles-js', 'assets/particles.json');
   },
 
   togglePlay(){
@@ -15,6 +20,7 @@ const Header = React.createClass({
   },
 
   render () {
+
     if(this.state.playing){
       var content = (
         <Reel/>
@@ -31,7 +37,8 @@ const Header = React.createClass({
 
     return (
       <div className="hero">
-          <div className="">
+          <div id="particles-js" className="particles"></div>
+          <div className="header-content">
             {content}
           </div>
       </div>

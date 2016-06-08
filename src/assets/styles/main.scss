@@ -117,6 +117,13 @@ h4 {
 body{ background-color: #333; }
 
 html, body, #app { height: 100%;}
+
+.header-content{
+  position: absolute;
+  top: 200px;
+  left: 0;
+}
+
 .projects-index{
   overflow: hidden;
   position: relative;
@@ -200,7 +207,7 @@ html, body, #app { height: 100%;}
 }
 
 .project.container{
-  top: 256px;
+  top: 384px;
   position: relative;
 
   .header{
@@ -297,9 +304,9 @@ html, body, #app { height: 100%;}
 .roboto{ font-family: 'Roboto', sans-serif; font-weight: 300;}
 
 .particles{
-  height: 100px;
+  // height: 100%;
   width: 100%;
-  position:absolute;
+  // position:absolute;
 }
 
 .right{

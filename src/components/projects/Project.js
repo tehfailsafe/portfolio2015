@@ -55,10 +55,10 @@ const Project = React.createClass({
       TweenMax.set(this.refs.content, {height: "auto"})
     }})
 
-
     TweenMax.fromTo(this.refs.projectContainer, .9,
       { top: pos.y - containerPos.y, left: pos.x - containerPos.x, width: pos.w, height: pos.h},
       { width: "100%", top: 0, left: 0, ease: Power2.easeInOut, delay: 0, onComplete: this.transitionInComplete })
+
   },
 
 

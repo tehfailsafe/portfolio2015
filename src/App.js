@@ -9,12 +9,12 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <div className="nav-bar">
-          <div className="container-fluid">
-            <div className="nav-links">
-              <Link to="/" className="title">Mike Johnson</Link>
+        <div className="nav-bar container-fluid">
+          <div className="nav-links">
+            <div className="right">
               <Link to="/about">About</Link>
               <Link to="/reel">Reel</Link>
+              <Link to="/">Work</Link>
             </div>
           </div>
         </div>

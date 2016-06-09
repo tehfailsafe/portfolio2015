@@ -6,7 +6,7 @@ const ContentSplitRight = React.createClass({
   },
   render(){
     return(
-      <div className="col-sm-4 col-sm-offset-1">
+      <div className="col-sm-3">
         <h4>{this.props.title}</h4>
         <div className="copy">
           {this.props.children}

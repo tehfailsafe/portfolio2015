@@ -6,7 +6,7 @@ const VideoPlayer = React.createClass({
   },
   render(){
     return(
-      <video src={this.props.src} muted autoPlay loop/>
+      <video src={`${this.props.path}/${this.props.src}`} controls poster={`${this.props.path}/hero.jpg`} className="video"/>
     )
   }
 })

@@ -3,6 +3,7 @@ import {Link} from 'react-router';
 import TweenMax from 'gsap';
 
 import * as Content from './content'
+import ProjectImage from './show/ProjectImage'
 
 
 const Project = React.createClass({
@@ -112,6 +113,7 @@ const Project = React.createClass({
 
   transitionInComplete(){
     this.setState({ open: true })
+    console.log("transition in complete", this.state.open);
     // add Body class fixed position to prevent scrolling when content is open
     //document.getElementsByTagName('body')[0].className = "noscroll";
     //particlesJS.load('particles-js', 'assets/particles.json');
@@ -174,6 +176,7 @@ const Project = React.createClass({
 // -------------------------------------- //
   render(){
     var Subcontent = Content[this.props.project.id]
+    console.log("subcontent", this.props.project.id);
     var projectPath = `assets/images/${this.props.project.id}`;
     return(
       <div style={{position:"fixed", top: 0, left: 0, width:"100%", height: "100%"}} >
@@ -195,15 +198,16 @@ const Project = React.createClass({
               <div  className="row">
                 <div ref="projectContainer" style={{position: "relative"}}>
                   <div ref="header" className="header">
-                    <img src={`${projectPath}/header.png`} />
+                    <img src={`${projectPath}/header.jpg`} />
                   </div>
 
-                  <div className="imageHolder">
-                    <img ref="thumbnail" className="img-fluid" src={`${projectPath}/hero.jpg`} />
-                  </div>
+                  <ProjectImage path={projectPath}>
+
+                  </ProjectImage>
+
 
                   <div ref="content" className="content" style={{ overflow: this.state.open ? "visible" : "hidden"}}>
-                    <Subcontent open={this.state.open}/>
+                    <Subcontent imagePath={`${projectPath}`} open={this.state.open}/>
                   </div>
 
                 </div>

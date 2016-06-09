@@ -76,26 +76,44 @@ const Index = React.createClass({
     return ([
       {
         'id': 'Audi',
-        'title': 'Audi',
-        'tn': 'Audi.jpg',
         'color': '#aa162e'
       },
       {
         'id': 'ConnectedCar',
-        'title': 'Microsoft Connected Car',
-        'tn': 'ConnectedCar.jpg',
         'color': '#2e599d'
       },
       {
         'id': 'CokeJourney',
-        'title': 'Coke Journeys',
-        'tn': 'CokeJourney.jpg',
         'color': '#800005'
       },
       {
         'id': 'Halo4',
+        'color': '#5B45C2'
+      },
+      {
+        'id': 'Disney',
+        'color': '#3292db'
+      },
+      {
+        'id': 'AlterEgo',
+        'color': '#3292db'
+      },
+      {
+        'id': 'XBOX',
         'color': '#A8BF24'
-      }
+      },
+      {
+        'id': 'Zune',
+        'color': '#EC31F3'
+      },
+      {
+        'id': 'Huawei',
+        'color': '#18A1E0'
+      },
+      {
+        'id': 'HTC',
+        'color': '#97C642'
+      },
 
     ])
   },

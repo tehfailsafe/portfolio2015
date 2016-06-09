@@ -1,5 +1,4 @@
 import React from 'react';
-import Carousel from 'nuka-carousel';
 import Breakout from '../../Breakout';
 
 
@@ -12,9 +11,8 @@ import VideoPlayer from '../show/VideoPlayer'
 
 export default React.createClass({
   render(){
-    var imagePath = "assets/images/Halo4"
     return (
-      <div className="content" style={{overflow: "hidden"}}>
+      <div>
         <Section>
           <ContentSplitLeft title="ABOUT">
             Halo 4 was 343 Studios first original title in the Halo franchise. Artefact was hired to help lead the envisioning UX and design of the interface.
@@ -32,10 +30,10 @@ export default React.createClass({
           <SectionHeader title="Main Menu" subtitle="01"/>
         </Section>
 
-        <ImageFull src={`${imagePath}/menu1.jpg`} />
-        <ImageFull src={`${imagePath}/menu2.jpg`} />
-        <ImageFull src={`${imagePath}/menu3.jpg`} />
-        <VideoPlayer src={`${imagePath}/menu2.mp4`}/>
+        <ImageFull src={`${this.props.imagePath}/menu1.jpg`} />
+        <ImageFull src={`${this.props.imagePath}/menu2.jpg`} />
+        <ImageFull src={`${this.props.imagePath}/menu3.jpg`} />
+        <VideoPlayer src={`${this.props.imagePath}/menu2.mp4`}/>
       </div>
     )
   }

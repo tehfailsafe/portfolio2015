@@ -4,10 +4,10 @@ const ContentSplitLeft = React.createClass({
   propTypes: {
     title: React.PropTypes.string.isRequired,
   },
-  
+
   render(){
     return(
-      <div className="col-sm-7">
+      <div className="col-sm-9">
         { this.props.title &&
           <h4>{this.props.title}</h4>
         }

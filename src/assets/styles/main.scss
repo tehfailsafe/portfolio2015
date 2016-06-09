@@ -36,13 +36,11 @@ h4 {
 
 .copy{
   font-family: Roboto-Thin;
-  font-size: 22px;
+  font-size: 18px;
   color: #738599;
-  letter-spacing: -0.41px;
+  letter-spacing: -0.2px;
   line-height: 32px;
 }
-
-
 
 
 
@@ -147,7 +145,7 @@ html, body, #app { height: 100%;}
 }
 
 .video{
-  position: absolute;
+  // position: absolute;
   min-width: 100%;
   width: 100%;
   top: 0;
@@ -284,7 +282,8 @@ html, body, #app { height: 100%;}
     }
 
     .body{ margin-top: 20px; font-size: 20px; color: $mediumGrey; line-height: 32px;}
-
+    .project-image{ margin-bottom: 24px; box-shadow: $shadow4; }
+    .project-image:last-child{ margin-bottom: 0; box-shadow: none;}
     .video{
       margin-bottom: 20px;
       position:relative; padding-top: 56%;

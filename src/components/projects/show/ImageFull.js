@@ -7,7 +7,7 @@ const ImageFull = React.createClass({
 
   render(){
     return(
-      <img className="img-fluid" src={this.props.src}></img>
+      <img className="img-fluid project-image" src={this.props.src}></img>
     )
   }
 })

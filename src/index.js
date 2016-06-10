@@ -12,11 +12,6 @@ import Reel from "./components/Reel";
 import Projects from "./components/projects/Projects";
 import Project from "./components/projects/Project";
 
-// const browserHistory = useRouterHistory(createHistory)({
-//   basename: '/portfolioReact'
-// });
-
-
 render(
   <Router history={browserHistory}>
     <Route path="" component={App}>

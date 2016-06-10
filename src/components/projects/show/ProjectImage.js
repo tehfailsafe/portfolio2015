@@ -11,7 +11,6 @@ const ProjectImage = React.createClass({
     return(
       <div className="imageHolder">
           <VideoPlayer path={this.props.path} src="buildDemo.mp4"/>
-
       </div>
     )
   }

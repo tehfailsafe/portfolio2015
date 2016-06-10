@@ -13,8 +13,9 @@ export default class App extends Component {
           <div className="nav-links">
             <div className="right">
               <Link to="/about">About</Link>
-              <Link to="/reel">Reel</Link>
               <Link to="/">Work</Link>
+              <Link to="/">Resume</Link>
+              <Link to="/">Contact</Link>
             </div>
           </div>
         </div>

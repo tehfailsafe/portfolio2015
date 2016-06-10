@@ -2,7 +2,7 @@ import React from 'react';
 
 const ContentSplitLeft = React.createClass({
   propTypes: {
-    title: React.PropTypes.string.isRequired,
+    title: React.PropTypes.string,
   },
 
   render(){

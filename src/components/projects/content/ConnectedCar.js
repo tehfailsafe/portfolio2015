@@ -12,7 +12,10 @@ const Car = React.createClass({
       <div>
         <Section>
           <ContentSplitLeft title="ABOUT">
-            Microsoft partnered with Ford to create Sync Gen3. For two years on this team my focus was building fully functional prototypes for user tests. Working with designers we would map out user goals and possible pitfalls. We would craft a scenario to test a specific usability feature and then build a believable working version for the test. I can't show much of the work due to NDA, but these images were released publicly.
+            The Microsoft Connected Car UX team followed a disciplined design led engineering approach to ensure safety and produce measurable UI quality. User data was the lifeblood for driving design decisions, running monthly usability tests in our full scale driving simulator.
+            <br/>
+            <br/>
+            I was brought on for two years to produce fully functional interactive prototypes for user tests, working with the designer to iterate and improve the designs.
           </ContentSplitLeft>
 
           <ContentSplitRight title="ROLE">
@@ -31,16 +34,18 @@ const Car = React.createClass({
           <ImageFull src={`${this.props.imagePath}/menu1.jpg`} />
           <ImageFull src={`${this.props.imagePath}/menu2.jpg`} />
           <ImageFull src={`${this.props.imagePath}/menu3.jpg`} />
-          <VideoPlayer src={`${this.props.imagePath}/buildDemo.mp4`}/>
-
         </div>
 
         <Section>
           <SectionHeader title="Simulator" subtitle="02"/>
           <ContentSplitLeft>
-            Driving safety was our primary concern and all designs had to pass the user test. To enable this I helped build out and maintain a full scale driving simulator, connecting a console screen, touch cluster screen, and hardware controls on the steering wheel. We also mounted hardware in vehicles and ran user tests on a closed track.
+            I helped build out and maintain a full scale driving simulator, syncing a console screen, touch enabled cluster screen, and hardware controls on the steering wheel. We also mounted hardware in vehicles and ran user tests on a closed track.
           </ContentSplitLeft>
         </Section>
+
+        <ImageFull src={`${this.props.imagePath}/simulator.jpg`} />
+        <div style={{height: 500}}></div>
+
       </div>
     )
   }

@@ -113,7 +113,6 @@ const Project = React.createClass({
 
   transitionInComplete(){
     this.setState({ open: true })
-    console.log("transition in complete", this.state.open);
     // add Body class fixed position to prevent scrolling when content is open
     //document.getElementsByTagName('body')[0].className = "noscroll";
     //particlesJS.load('particles-js', 'assets/particles.json');

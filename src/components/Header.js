@@ -27,17 +27,17 @@ const Header = React.createClass({
       )
     } else {
       var content = (
-        <div className="col-md-10">
+        <div className="col-md-10" style={{paddingLeft: 64}}>
           <p>Hello. My Name is Mike Johnson.</p>
           <p style={{fontSize: 24}}>I am an interaction designer specializing in motion, prototypes, and user testing.</p>
         </div>
-
       )
     }
 
     return (
       <div className="hero">
           <div id="particles-js" className="particles"></div>
+          <img src="assets/images/stack.png" style={{position: 'absolute', bottom: 16, right: 16, opacity: 0.5}}/>
           <div className="header-content">
             {content}
           </div>

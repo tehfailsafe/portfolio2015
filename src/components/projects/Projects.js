@@ -55,7 +55,7 @@ const Index = React.createClass({
 
       return(
 				<div ref={project.id}  key={project.id} className={`item col-sm-4 col-xs-12 col-xl-3 ${isActive ? "active" : ""}`}>
-					<Link to={isActive ? '/' : '/projects/' + project.id} activeClassName="open">
+					<Link to={isActive ? '/' : '/projects/' + project.id} activeClassName="open" className="thumbnailImage">
             <img src={`${projectPath}/hero.jpg`} className="thumbnail"/>
 					</Link>
             {isActive ? React.cloneElement(this.props.children, { project: project, pos: this.state.originalPos  }): null}
@@ -76,43 +76,63 @@ const Index = React.createClass({
     return ([
       {
         'id': 'Audi',
-        'color': '#aa162e'
+        'title': 'Audi',
+        'color': '#9B1911'
       },
       {
         'id': 'ConnectedCar',
-        'color': '#2e599d'
+        'title': 'Microsoft: Connected Car',
+        'color': '#3D8FFF'
       },
       {
         'id': 'CokeJourney',
+        'title': 'Coca-Cola Journeys',
         'color': '#800005'
       },
       {
         'id': 'Halo4',
+        'title': 'Halo4 4',
         'color': '#5B45C2'
       },
       {
         'id': 'Disney',
+        'title': 'My Disney Experience',
         'color': '#3292db'
       },
       {
         'id': 'AlterEgo',
+        'title': 'Alter Ego Comics',
         'color': '#3292db'
       },
       {
         'id': 'XBOX',
+        'title': 'XBOX',
         'color': '#A8BF24'
       },
       {
         'id': 'Zune',
+        'title': 'ZuneHD',
         'color': '#EC31F3'
       },
       {
         'id': 'Huawei',
-        'color': '#18A1E0'
+        'title': 'Huawei',
+        'color': '#A7111D'
       },
       {
         'id': 'HTC',
+        'title': 'HTC',
         'color': '#97C642'
+      },
+      {
+        'id': 'ATTInsider',
+        'title': 'ATT Insider',
+        'color': '#EF6F00'
+      },
+      {
+        'id': 'Morgans',
+        'title': 'Morgans Hotel Group',
+        'color': '#F36400'
       },
 
     ])

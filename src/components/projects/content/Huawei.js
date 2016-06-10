@@ -15,25 +15,16 @@ export default React.createClass({
       <div>
         <Section>
           <ContentSplitLeft title="ABOUT">
-            Halo 4 was 343 Studios first original title in the Halo franchise. Artefact was hired to help lead the envisioning UX and design of the interface.
+            Huawei was working on a new secret device, and wanted an updated lock screen. At Artefact I explored several variations of broad stroke lock screen and home screen scenarios.
           </ContentSplitLeft>
 
           <ContentSplitRight title="ROLE">
             <ul>
               <li>Motion Design</li>
-              <li>Interaction Design</li>
             </ul>
           </ContentSplitRight>
         </Section>
 
-        <Section>
-          <SectionHeader title="Main Menu" subtitle="01"/>
-        </Section>
-
-        <ImageFull src={`${this.props.imagePath}/menu1.jpg`} />
-        <ImageFull src={`${this.props.imagePath}/menu2.jpg`} />
-        <ImageFull src={`${this.props.imagePath}/menu3.jpg`} />
-        <VideoPlayer src={`${this.props.imagePath}/menu2.mp4`}/>
       </div>
     )
   }

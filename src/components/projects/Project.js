@@ -71,7 +71,7 @@ const Project = React.createClass({
 
   transitionOut(path){
     this.setState({open: false})
-    console.log(this.refs.header);
+    this.refs.thumbnail.stop();
     document.getElementsByTagName('body')[0].className = ""; // revove the fixed position on body to allow scrolling
     window.scrollTo(0, this.state.scrollTop) // scroll back to original scroll position
 
@@ -200,9 +200,7 @@ const Project = React.createClass({
                     <img src={`${projectPath}/header.jpg`} />
                   </div>
 
-                  <ProjectImage path={projectPath}>
-
-                  </ProjectImage>
+                  <ProjectImage ref="thumbnail" path={projectPath} />
 
 
                   <div ref="content" className="content" style={{ overflow: this.state.open ? "visible" : "hidden"}}>

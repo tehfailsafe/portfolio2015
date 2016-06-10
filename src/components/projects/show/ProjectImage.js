@@ -2,15 +2,28 @@ import React from 'react';
 import VideoPlayer from './VideoPlayer'
 
 const ProjectImage = React.createClass({
+  stop(){
+    this.refs.player.stop();
+  },
+
   getInitialState(){
+
     return{
       playing: false
     }
   },
+
+  hasVideo(){
+    if(this.refs.temp){
+      console.log(":refs", this.refs.temp);
+    }
+  },
+
   render(){
     return(
       <div className="imageHolder">
-          <VideoPlayer path={this.props.path} src="buildDemo.mp4"/>
+        <img ref="temp" />
+          <VideoPlayer ref="player" path={this.props.path} src="hero.mp4"/>
       </div>
     )
   }

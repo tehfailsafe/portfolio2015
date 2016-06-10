@@ -15,25 +15,15 @@ export default React.createClass({
       <div>
         <Section>
           <ContentSplitLeft title="ABOUT">
-            Halo 4 was 343 Studios first original title in the Halo franchise. Artefact was hired to help lead the envisioning UX and design of the interface.
+            I helped create the motion design for the "My Disney Experience" app for iOS and Android. This was a compilation version that helped sell the design to stakeholders pointing out the differences between in-park experience and at home, before the vacation.
           </ContentSplitLeft>
 
           <ContentSplitRight title="ROLE">
             <ul>
               <li>Motion Design</li>
-              <li>Interaction Design</li>
             </ul>
           </ContentSplitRight>
         </Section>
-
-        <Section>
-          <SectionHeader title="Main Menu" subtitle="01"/>
-        </Section>
-
-        <ImageFull src={`${this.props.imagePath}/menu1.jpg`} />
-        <ImageFull src={`${this.props.imagePath}/menu2.jpg`} />
-        <ImageFull src={`${this.props.imagePath}/menu3.jpg`} />
-        <VideoPlayer src={`${this.props.imagePath}/menu2.mp4`}/>
       </div>
     )
   }

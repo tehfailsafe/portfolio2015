@@ -35,7 +35,8 @@ h4 {
 }
 
 .copy{
-  font-family: Roboto-Thin;
+  font-family: "Roboto";
+  font-weight: 300;
   font-size: 18px;
   color: #738599;
   letter-spacing: -0.2px;
@@ -74,7 +75,7 @@ h4 {
     }
     a{
         margin-right: 32px;
-        /* font-weight: 100; */
+        font-weight: 500;
         letter-spacing: .05em;
         font-size: 12px;
         text-transform: uppercase;
@@ -106,7 +107,7 @@ h4 {
   // padding: 0 64px;
 
   p{
-    font-family: "Montserrat-thin";
+    font-family: "Montserrat";
     font-size: 46px;
     font-weight: 100;
     line-height: 1.25;
@@ -200,6 +201,31 @@ html, body, #app { height: 100%;}
     // right: -1000%;
     // top: -1000%;
     // bottom: -1000%;
+  }
+
+  .videoPlayer{
+    position: relative;
+    text-align: center;
+
+    .controls{
+      position: absolute;
+      z-index: 100;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: .5;
+      transition: all 0.35s;
+      cursor: pointer;
+    }
+
+    .pause{
+      opacity: 0;
+    }
+  }
+  .videoPlayer:hover{
+    .pause{
+        opacity: .5
+      }
   }
 }
 

@@ -26,16 +26,7 @@ export default React.createClass({
           </ContentSplitRight>
         </Section>
 
-        <Section>
-          <SectionHeader title="Main Menu" subtitle="01"/>
-        </Section>
-        <ImageFull src={`${this.props.imagePath}/menu1.jpg`} />
-
-        <Section>
-          <ContentSplitLeft title="AWARDS">
-            <i>"ZAAZ raised the bar for the hotel industry by creating a rich and immersive site that focused on several aspects: offering larger and more engaging imagery, redefining the booking process and adding local information for each property, updated in real-time. The online experience now reflects the modern glamour of the Morgans brand."</i> -- Applied Arts Awards: Entertainment Arts and Tourism.
-          </ContentSplitLeft>
-        </Section>
+      
 
       </div>
     )

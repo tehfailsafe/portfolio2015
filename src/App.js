@@ -12,10 +12,9 @@ export default class App extends Component {
         <div className="nav-bar container-fluid">
           <div className="nav-links">
             <div className="right">
-              <Link to="/about">About</Link>
               <Link to="/">Work</Link>
-              <Link to="/">Resume</Link>
-              <Link to="/">Contact</Link>
+              <a href="/assets/resume.pdf">Resume</a>
+              <a href="mailto:mike@failsafedesign.com">Contact</a>
             </div>
           </div>
         </div>

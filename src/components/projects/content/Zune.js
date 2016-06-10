@@ -15,13 +15,13 @@ export default React.createClass({
       <div>
         <Section>
           <ContentSplitLeft title="ABOUT">
-            Halo 4 was 343 Studios first original title in the Halo franchise. Artefact was hired to help lead the envisioning UX and design of the interface.
+            After the success of the XBOX project, I continued to work on a rebuild of another product, the ZuneHD.
           </ContentSplitLeft>
 
           <ContentSplitRight title="ROLE">
             <ul>
-              <li>Motion Design</li>
               <li>Interaction Design</li>
+              <li>Motion Design</li>
             </ul>
           </ContentSplitRight>
         </Section>
@@ -30,10 +30,8 @@ export default React.createClass({
           <SectionHeader title="Main Menu" subtitle="01"/>
         </Section>
 
-        <ImageFull src={`${this.props.imagePath}/menu1.jpg`} />
-        <ImageFull src={`${this.props.imagePath}/menu2.jpg`} />
-        <ImageFull src={`${this.props.imagePath}/menu3.jpg`} />
-        <VideoPlayer src={`${this.props.imagePath}/menu2.mp4`}/>
+        <ImageFull src={`${this.props.imagePath}/mainMenu1.jpg`} />
+        <ImageFull src={`${this.props.imagePath}/mainMenu2.jpg`} />
       </div>
     )
   }

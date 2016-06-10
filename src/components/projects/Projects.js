@@ -54,7 +54,7 @@ const Index = React.createClass({
 			}
 
       return(
-				<div ref={project.id}  key={project.id} className={`item col-sm-4 col-xs-12 col-xl-3 ${isActive ? "active" : ""}`}>
+				<div ref={project.id}  key={project.id} className={`item col-sm-4 col-xs-12 col-xl-4 ${isActive ? "active" : ""}`}>
 					<Link to={isActive ? '/' : '/projects/' + project.id} activeClassName="open" className="thumbnailImage">
             <img src={`${projectPath}/hero.jpg`} className="thumbnail"/>
 					</Link>
@@ -99,11 +99,7 @@ const Index = React.createClass({
         'title': 'My Disney Experience',
         'color': '#3292db'
       },
-      {
-        'id': 'AlterEgo',
-        'title': 'Alter Ego Comics',
-        'color': '#3292db'
-      },
+
       {
         'id': 'XBOX',
         'title': 'XBOX',
@@ -114,25 +110,16 @@ const Index = React.createClass({
         'title': 'ZuneHD',
         'color': '#EC31F3'
       },
-      {
-        'id': 'Huawei',
-        'title': 'Huawei',
-        'color': '#A7111D'
-      },
-      {
-        'id': 'HTC',
-        'title': 'HTC',
-        'color': '#97C642'
-      },
-      {
-        'id': 'ATTInsider',
-        'title': 'ATT Insider',
-        'color': '#EF6F00'
-      },
+
       {
         'id': 'Morgans',
         'title': 'Morgans Hotel Group',
         'color': '#F36400'
+      },
+      {
+        'id': 'Huawei',
+        'title': 'Huawei',
+        'color': '#A7111D'
       },
 
     ])
@@ -153,3 +140,21 @@ const Index = React.createClass({
 
 
 export default Index;
+
+
+
+// {
+//   'id': 'HTC',
+//   'title': 'HTC',
+//   'color': '#97C642'
+// },
+// {
+//   'id': 'ATTInsider',
+//   'title': 'ATT Insider',
+//   'color': '#EF6F00'
+// },
+// {
+//   'id': 'AlterEgo',
+//   'title': 'Alter Ego Comics',
+//   'color': '#3292db'
+// },

@@ -3,7 +3,7 @@ require('./assets/styles/main.scss');
 
 import React from 'react'
 import { render } from 'react-dom'
-import { Router, Route, IndexRoute, useRouterHistory } from 'react-router'
+import { Router, Route, IndexRoute, useRouterHistory, browserHistory } from 'react-router'
 import { createHistory } from 'history';
 
 import App from "./App";
@@ -12,9 +12,9 @@ import Reel from "./components/Reel";
 import Projects from "./components/projects/Projects";
 import Project from "./components/projects/Project";
 
-const browserHistory = useRouterHistory(createHistory)({
-  basename: '/portfolioReact'
-});
+// const browserHistory = useRouterHistory(createHistory)({
+//   basename: '/portfolioReact'
+// });
 
 
 render(

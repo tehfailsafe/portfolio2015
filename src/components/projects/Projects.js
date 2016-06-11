@@ -3,6 +3,7 @@ import Packery from 'packery';
 import {Link} from 'react-router';
 import imagesLoaded from 'imagesloaded';
 import TweenMax from 'gsap';
+import Header from '../Header';
 
 const Index = React.createClass({
   contextTypes: {
@@ -54,19 +55,27 @@ const Index = React.createClass({
 			}
 
       return(
-				<div ref={project.id}  key={project.id} className={`item col-sm-4 col-xs-12 col-xl-4 ${isActive ? "active" : ""}`}>
-					<Link to={isActive ? '/' : '/projects/' + project.id} activeClassName="open" className="thumbnailImage">
+				<div ref={project.id}  key={project.id} className={`col-sm-4 col-xs-12 projectThumnail ${isActive ? "active" : ""}`}>
+					<Link to={isActive ? '/' : '/projects/' + project.id} activeClassName="open">
+            <div className="projectOverlay">
+              {project.title}
+            </div>
             <img src={`${projectPath}/hero.jpg`} className="thumbnail"/>
 					</Link>
             {isActive ? React.cloneElement(this.props.children, { project: project, pos: this.state.originalPos  }): null}
 				</div>
       )
     })
-
     return(
-      <div className="projects-index">
-        <div ref="grid" className='row no-gutters grid'>
-          {projects}
+      <div>
+        <Header />
+        { this.context.router.isActive('reel') &&
+          this.props.children
+        }
+        <div className="projects-index">
+          <div ref="grid" className='row no-gutters grid'>
+            {projects}
+          </div>
         </div>
       </div>
     )
@@ -81,7 +90,7 @@ const Index = React.createClass({
       },
       {
         'id': 'ConnectedCar',
-        'title': 'Microsoft: Connected Car',
+        'title': 'Microsoft Connected Car',
         'color': '#3D8FFF'
       },
       {
@@ -91,7 +100,7 @@ const Index = React.createClass({
       },
       {
         'id': 'Halo4',
-        'title': 'Halo4 4',
+        'title': 'Halo 4',
         'color': '#5B45C2'
       },
       {
@@ -102,7 +111,7 @@ const Index = React.createClass({
 
       {
         'id': 'XBOX',
-        'title': 'XBOX',
+        'title': 'XBOX 360',
         'color': '#A8BF24'
       },
       {

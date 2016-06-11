@@ -12,13 +12,12 @@ export default class App extends Component {
         <div className="nav-bar container-fluid">
           <div className="nav-links">
             <div className="right">
-              <Link to="/">Work</Link>
+              <Link to="/reel">Reel</Link>
               <a href="/portfolio/assets/resume.pdf">Resume</a>
               <a href="mailto:mike@failsafedesign.com">Contact</a>
             </div>
           </div>
         </div>
-        <Header />
         {this.props.children }
       </div>
     );

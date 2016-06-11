@@ -4,6 +4,7 @@ import TweenMax from 'gsap';
 
 import * as Content from './content'
 import ProjectImage from './show/ProjectImage'
+import VideoPlayer from './show/VideoPlayer'
 
 
 const Project = React.createClass({
@@ -49,12 +50,9 @@ const Project = React.createClass({
     TweenMax.from(this.refs.background, 0, {opacity: 0, delay: .45})
 
     TweenMax.set(this.refs.header, {height: 0})
-    TweenMax.to(this.refs.header, 0.5, {height: 256, y: -256, ease: Power2.easeOut, delay: 0.5})
+    TweenMax.to(this.refs.header, 0.5, {height: 256, y: -250, ease: Power2.easeOut, delay: 0.5})
 
-    TweenMax.set(this.refs.content, {height: 600})
-    TweenMax.from(this.refs.content, 0.45, {height: 0, ease: Power2.easeInOut, delay: 0.5, onComplete: ()=>{
-      TweenMax.set(this.refs.content, {height: "auto"})
-    }})
+
 
     TweenMax.fromTo(this.refs.projectContainer, .9,
       { top: pos.y - containerPos.y, left: pos.x - containerPos.x, width: pos.w, height: pos.h},
@@ -70,8 +68,8 @@ const Project = React.createClass({
 // -------------------------------------- //
 
   transitionOut(path){
-    this.setState({open: false})
-    this.refs.thumbnail.stop();
+
+    this.refs.player.stop();
     document.getElementsByTagName('body')[0].className = ""; // revove the fixed position on body to allow scrolling
     window.scrollTo(0, this.state.scrollTop) // scroll back to original scroll position
 
@@ -113,6 +111,10 @@ const Project = React.createClass({
 
   transitionInComplete(){
     this.setState({ open: true })
+    TweenMax.set(this.refs.content, {height: 600})
+    TweenMax.from(this.refs.content, 0.45, {height: 0, ease: Power2.easeInOut, delay: 0.0, onComplete: ()=>{
+      TweenMax.set(this.refs.content, {height: "auto"})
+    }})
     // add Body class fixed position to prevent scrolling when content is open
     //document.getElementsByTagName('body')[0].className = "noscroll";
     //particlesJS.load('particles-js', 'assets/particles.json');
@@ -120,6 +122,7 @@ const Project = React.createClass({
 
   transitionOutComplete(path){
     // force router to path after transition out
+    this.setState({open: false})
     this.context.router.push(path)
   },
 
@@ -200,10 +203,12 @@ const Project = React.createClass({
                     <img src={`${projectPath}/header.jpg`} />
                   </div>
 
-                  <ProjectImage ref="thumbnail" path={projectPath} />
+                  <div className="imageHolder">
+                    <VideoPlayer ref="player" path={projectPath} src="hero.mp4"/>
+                  </div>
 
 
-                  <div ref="content" className="content" style={{ overflow: this.state.open ? "visible" : "hidden"}}>
+                  <div ref="content" className="content" style={{ display: this.state.open ? "block" : "none", overflow: "hidden"}}>
                     <Subcontent imagePath={`${projectPath}`} open={this.state.open}/>
                   </div>
 

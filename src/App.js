@@ -13,7 +13,7 @@ export default class App extends Component {
           <div className="nav-links">
             <div className="right">
               <Link to="/">Work</Link>
-              <a href="/assets/resume.pdf">Resume</a>
+              <a href="/portfolio/assets/resume.pdf">Resume</a>
               <a href="mailto:mike@failsafedesign.com">Contact</a>
             </div>
           </div>

@@ -27,7 +27,7 @@ const Header = React.createClass({
       )
     } else {
       var content = (
-        <div className="col-md-10" style={{paddingLeft: 64}}>
+        <div className="col-md-6" style={{paddingLeft: 64}}>
           <p style={{fontWeight: 700}}>Hello. My Name is Mike Johnson.</p>
           <p style={{fontSize: 24}}>I am an interaction designer specializing in motion, prototypes, and user testing.</p>
         </div>

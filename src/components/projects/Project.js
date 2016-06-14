@@ -178,7 +178,6 @@ const Project = React.createClass({
 // -------------------------------------- //
   render(){
     var Subcontent = Content[this.props.project.id]
-    console.log("subcontent", this.props.project.id);
     var projectPath = `assets/images/${this.props.project.id}`;
     return(
       <div style={{position:"fixed", top: 0, left: 0, width:"100%", height: "100%"}} >

@@ -8,8 +8,7 @@ const SectionHeader = React.createClass({
   render(){
     return(
       <div className="col-sm-12">
-        <h4>{this.props.subtitle}</h4>
-        <h2>{this.props.title}</h2>
+        <h4>{this.props.title}</h4>
       </div>
     )
   }

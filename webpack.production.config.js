@@ -1,4 +1,6 @@
 var path = require('path');
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
+
 var config = {
   entry: path.resolve(__dirname, './src/index.js'),
   output: {
@@ -12,7 +14,7 @@ var config = {
       "eventEmitter/EventEmitter": "wolfy87-eventemitter"
     }
   },
-  
+
   module: {
     loaders: [
       {
@@ -25,11 +27,11 @@ var config = {
         loader: 'imports?define=>false',
         include: /(fizzy\-ui\-utils|outlayer|get\-size|packery)[\\\/]/
       },
-      { test: /\.css?$/, loader: 'style!css' },
+      { test: /\.css?$/, loader: ExtractTextPlugin.extract("style-loader", "style!css") },
       {
         test: /\.scss$/,
         include: /src/,
-        loader: "style!css!sass"
+        loader: ExtractTextPlugin.extract("style-loader", "style!css!sass")
       },
       {
         test: /\.(otf|eot|png|svg|ttf|woff|woff2)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
@@ -43,7 +45,10 @@ var config = {
         ]
       },
     ]
-  }
+  },
+  plugins: [
+        new ExtractTextPlugin("main.css")
+    ]
 };
 
 module.exports = config;

@@ -1,8 +1,7 @@
 import React from 'react'
 import Section from '../show/Section'
 import SectionHeader from '../show/SectionHeader'
-import ContentSplitLeft from '../show/ContentSplitLeft'
-import ContentSplitRight from '../show/ContentSplitRight'
+
 import ImageFull from '../show/ImageFull'
 import VideoPlayer from '../show/VideoPlayer'
 

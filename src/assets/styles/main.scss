@@ -1,12 +1,13 @@
-@import url(https://fonts.googleapis.com/css?family=Montserrat);
+// @import url(https://fonts.googleapis.com/css?family=Montserrat);
 @import "_custom-variables";
 
 // html{ overflow-y: scroll; }
-body.noscroll{
+.noscroll{
   position: fixed;
   overflow-y: scroll;
   width: 100%;
 }
+
 body{
   overflow-y: scroll
 }
@@ -323,8 +324,21 @@ html, body, #app { height: 100%;}
     // z-index: 99;
 
     .section{
-      padding: 32px 48px;
       background-color: #fff;
+
+      .copy{
+        padding: 32px 48px;
+
+        quote{
+          font-weight: bold;
+
+        }
+      }
+    }
+
+    .section:last-child{
+      padding-bottom: 128px;
+      margin-bottom: 200px;
     }
 
     video{
@@ -351,8 +365,7 @@ html, body, #app { height: 100%;}
     }
 
     .body{ margin-top: 20px; font-size: 20px; color: $mediumGrey; line-height: 32px;}
-    .project-image{ margin-bottom: 24px; box-shadow: $shadow4; }
-    .project-image:last-child{ margin-bottom: 0; box-shadow: none;}
+
     .video{
       margin-bottom: 20px;
       position:relative; padding-top: 56%;

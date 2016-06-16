@@ -21,6 +21,7 @@
     "classie": "^1.0.0",
     "css-loader": "^0.23.0",
     "eslint-plugin-react": "^3.6.2",
+    "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.5",
     "fs": "0.0.2",
     "get-style-property": "^0.1.1",

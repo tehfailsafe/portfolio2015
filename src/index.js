@@ -1,5 +1,8 @@
-require('./assets/styles/bootstrap.scss');
-require('./assets/styles/main.scss');
+// require('./assets/styles/bootstrap.scss');
+// require('./assets/styles/main.scss');
+
+import './assets/styles/bootstrap.scss';
+import './assets/styles/main.scss';
 
 import React from 'react'
 import { render } from 'react-dom'

@@ -1,47 +1,49 @@
 import React from 'react'
+
 import Section from '../show/Section'
 import ImageFull from '../show/ImageFull'
 import VideoPlayer from '../show/VideoPlayer'
+import CopySplitLeft from '../show/CopySplitLeft'
+import CopySplitRight from '../show/CopySplitRight'
+import Copy from '../show/Copy'
 
 const Car = React.createClass({
   render(){
     return (
       <div>
         <Section>
-          <ContentSplitLeft title="ABOUT">
-            The Microsoft Connected Car UX team followed a disciplined design led engineering approach to ensure safety and produce measurable UI quality. User data was the lifeblood for driving design decisions, running monthly usability tests in our full scale driving simulator.
-            <br/>
-            <br/>
-            I was brought on for two years to produce fully functional interactive prototypes for user tests, working with the designer to iterate and improve the designs.
-          </ContentSplitLeft>
+          <Copy class="row">
+            <CopySplitLeft title="ABOUT">
+              Microsoft has been supporting Ford and the SYNC in vehicle infotainment system. There have been several major version updates and I worked on the <quote>Gen 3</quote> version. Due to NDA I can't say too much about the project, but I can show the following public images and video.
+            </CopySplitLeft>
 
-          <ContentSplitRight title="ROLE">
-            <ul>
-              <li>Prototype</li>
-              <li>User Testing</li>
-              <li>Interaction Design</li>
-            </ul>
-          </ContentSplitRight>
+            <CopySplitRight title="ROLE">
+              <ul>
+                <li>Prototype</li>
+                <li>User Testing</li>
+                <li>Interaction Design</li>
+              </ul>
+            </CopySplitRight>
+          </Copy>
         </Section>
 
-        <Section>
-          <SectionHeader title="Main Menu" subtitle="01"/>
-        </Section>
-        <div>
+        <Section title="Main Menu" >
           <ImageFull src={`${this.props.imagePath}/menu1.jpg`} />
-          <ImageFull src={`${this.props.imagePath}/menu2.jpg`} />
-          <ImageFull src={`${this.props.imagePath}/menu3.jpg`} />
-        </div>
+          <Copy>
+            We practiced a disciplined design led approach to ensure safety and produce measurable UI quality. User data was the lifeblood for design decisions, running monthly usability tests in our simulator.
+          </Copy>
 
-        <Section>
-          <SectionHeader title="Simulator" subtitle="02"/>
-          <ContentSplitLeft>
-            I helped build out and maintain a full scale driving simulator, syncing a console screen, touch enabled cluster screen, and hardware controls on the steering wheel. We also mounted hardware in vehicles and ran user tests on a closed track.
-          </ContentSplitLeft>
+
         </Section>
 
-        <ImageFull src={`${this.props.imagePath}/simulator.jpg`} />
-        <div style={{height: 500}}></div>
+
+        <Section title="Simulator">
+          <ImageFull src={`${this.props.imagePath}/simulator.jpg`} />
+          <Copy>
+            I helped build out and maintain a full scale driving simulator, syncing a console screen, touch enabled cluster screen, and hardware controls on the steering wheel. We also mounted hardware in vehicles and conducted usability tests on a closed track using our system while driving.
+          </Copy>
+        </Section>
+
 
       </div>
     )

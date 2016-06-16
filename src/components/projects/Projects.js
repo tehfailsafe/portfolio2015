@@ -84,19 +84,9 @@ const Index = React.createClass({
   getJson(){
     return ([
       {
-        'id': 'Audi',
-        'title': 'Audi',
-        'color': '#9B1911'
-      },
-      {
         'id': 'ConnectedCar',
         'title': 'Microsoft Connected Car',
         'color': '#3D8FFF'
-      },
-      {
-        'id': 'CokeJourney',
-        'title': 'Coca-Cola Journeys',
-        'color': '#800005'
       },
       {
         'id': 'Halo4',
@@ -104,31 +94,25 @@ const Index = React.createClass({
         'color': '#5B45C2'
       },
       {
-        'id': 'Disney',
-        'title': 'My Disney Experience',
-        'color': '#3292db'
-      },
-
-      {
-        'id': 'XBOX',
-        'title': 'XBOX 360',
-        'color': '#A8BF24'
-      },
-      {
-        'id': 'Zune',
-        'title': 'ZuneHD',
-        'color': '#EC31F3'
-      },
-
-      {
         'id': 'Morgans',
         'title': 'Morgans Hotel Group',
         'color': '#F36400'
       },
       {
-        'id': 'Huawei',
-        'title': 'Huawei',
-        'color': '#A7111D'
+        'id': 'XBOX',
+        'title': 'XBOX 360',
+        'color': '#A8BF24'
+      },
+
+      {
+        'id': 'Zune',
+        'title': 'ZuneHD',
+        'color': '#EC31F3'
+      },
+      {
+        'id': 'AlterEgo',
+        'title': 'Alter Ego Comics',
+        'color': '#3292db'
       },
 
     ])
@@ -152,18 +136,37 @@ export default Index;
 
 
 
-// {
-//   'id': 'HTC',
-//   'title': 'HTC',
-//   'color': '#97C642'
-// },
-// {
-//   'id': 'ATTInsider',
-//   'title': 'ATT Insider',
-//   'color': '#EF6F00'
-// },
-// {
-//   'id': 'AlterEgo',
-//   'title': 'Alter Ego Comics',
-//   'color': '#3292db'
-// },
+      // {
+      //   'id': 'Audi',
+      //   'title': 'Audi',
+      //   'color': '#9B1911'
+      // },
+      //
+      // {
+      //   'id': 'CokeJourney',
+      //   'title': 'Coca-Cola Journeys',
+      //   'color': '#800005'
+      // },
+      //
+      // {
+      //   'id': 'Disney',
+      //   'title': 'My Disney Experience',
+      //   'color': '#3292db'
+      // },
+      //
+      // {
+      //   'id': 'Huawei',
+      //   'title': 'Huawei',
+      //   'color': '#A7111D'
+      // },
+      //
+      // {
+      //   'id': 'HTC',
+      //   'title': 'HTC',
+      //   'color': '#97C642'
+      // },
+      // {
+      //   'id': 'ATTInsider',
+      //   'title': 'ATT Insider',
+      //   'color': '#EF6F00'
+      // },

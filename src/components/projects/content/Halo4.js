@@ -1,11 +1,9 @@
 import React from 'react';
-import Breakout from '../../Breakout';
-
 
 import Section from '../show/Section'
-import SectionHeader from '../show/SectionHeader'
-import ContentSplitLeft from '../show/ContentSplitLeft'
-import ContentSplitRight from '../show/ContentSplitRight'
+import CopySplitLeft from '../show/CopySplitLeft'
+import CopySplitRight from '../show/CopySplitRight'
+import Copy from '../show/Copy'
 import ImageFull from '../show/ImageFull'
 import VideoPlayer from '../show/VideoPlayer'
 
@@ -14,37 +12,35 @@ export default React.createClass({
     return (
       <div>
         <Section>
-          <ContentSplitLeft title="ABOUT">
-            Halo 4 was 343 Studios first original title in the Halo franchise. Artefact was hired to help lead the envisioning UX and design of the interface.
-          </ContentSplitLeft>
+          <Copy class="row">
+            <CopySplitLeft title="ABOUT">
+              Halo 4 was 343 Studios first original title in the Halo franchise. Artefact was hired to help lead the envisioning UX and design of the interface.
+            </CopySplitLeft>
 
-          <ContentSplitRight title="ROLE">
-            <ul>
-              <li>Motion Design</li>
-              <li>Interaction Design</li>
-            </ul>
-          </ContentSplitRight>
+            <CopySplitRight title="ROLE">
+              <ul>
+                <li>Motion Design</li>
+                <li>Interaction Design</li>
+              </ul>
+            </CopySplitRight>
+          </Copy>
         </Section>
 
 
-        <Section>
-          <SectionHeader title="Main Menu" subtitle="01"/>
+        <Section title="Main Menu">
+          <ImageFull src={`${this.props.imagePath}/menu1.jpg`} />
+          <ImageFull src={`${this.props.imagePath}/menu2.jpg`} />
+          <ImageFull src={`${this.props.imagePath}/menu3.jpg`} />
         </Section>
-        <ImageFull src={`${this.props.imagePath}/menu1.jpg`} />
-        <ImageFull src={`${this.props.imagePath}/menu2.jpg`} />
-        <ImageFull src={`${this.props.imagePath}/menu3.jpg`} />
 
-
-
-        <Section>
-          <SectionHeader title="Player Menu" subtitle="02"/>
-          <ContentSplitLeft>
+        <Section title="Player Menu">
+          <CopySplitLeft>
             The player bar would be a persistant element at the bottom, allowing quick access to your party, loadouts, profile, and more.
             <br/><br/>
             The player bar should be with you at all times, projected directly onto the inside of your visor. I added a spherical effect along with a slight holographic look.
-          </ContentSplitLeft>
+          </CopySplitLeft>
+          <ImageFull src={`${this.props.imagePath}/playerMenu1.jpg`} />
         </Section>
-        <ImageFull src={`${this.props.imagePath}/playerMenu1.jpg`} />
 
       </div>
     )

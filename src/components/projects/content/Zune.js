@@ -1,11 +1,9 @@
 import React from 'react';
-import Breakout from '../../Breakout';
-
 
 import Section from '../show/Section'
-import SectionHeader from '../show/SectionHeader'
-import ContentSplitLeft from '../show/ContentSplitLeft'
-import ContentSplitRight from '../show/ContentSplitRight'
+import CopySplitLeft from '../show/CopySplitLeft'
+import CopySplitRight from '../show/CopySplitRight'
+import Copy from '../show/Copy'
 import ImageFull from '../show/ImageFull'
 import VideoPlayer from '../show/VideoPlayer'
 
@@ -14,24 +12,25 @@ export default React.createClass({
     return (
       <div>
         <Section>
-          <ContentSplitLeft title="ABOUT">
-            After the success of the XBOX project, I continued to work on a rebuild of another product, the ZuneHD.
-          </ContentSplitLeft>
+          <Copy class="row">
+            <CopySplitLeft title="ABOUT">
+              After the success of the XBOX project, I continued to work on a rebuild of another product, the ZuneHD.
+            </CopySplitLeft>
 
-          <ContentSplitRight title="ROLE">
-            <ul>
-              <li>Interaction Design</li>
-              <li>Motion Design</li>
-            </ul>
-          </ContentSplitRight>
+            <CopySplitRight title="ROLE">
+              <ul>
+                <li>Interaction Design</li>
+                <li>Motion Design</li>
+              </ul>
+            </CopySplitRight>
+          </Copy>
         </Section>
 
-        <Section>
-          <SectionHeader title="Main Menu" subtitle="01"/>
+        <Section title="Main Menu">
+          <ImageFull src={`${this.props.imagePath}/mainMenu1.jpg`} />
+          <ImageFull src={`${this.props.imagePath}/mainMenu2.jpg`} />
         </Section>
 
-        <ImageFull src={`${this.props.imagePath}/mainMenu1.jpg`} />
-        <ImageFull src={`${this.props.imagePath}/mainMenu2.jpg`} />
       </div>
     )
   }

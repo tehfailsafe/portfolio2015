@@ -3,7 +3,10 @@ import React from 'react';
 const temp = React.createClass({
   render(){
     return(
-      <div></div>
+      <div className="col-sm-9">
+        <h4>{this.props.title}</h4>
+        {this.props.children}
+      </div>
     )
   }
 })

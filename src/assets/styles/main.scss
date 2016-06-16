@@ -142,10 +142,11 @@ html, body, #app { height: 100%;}
   .projectOverlay{
     background-color: rgba(60, 145, 255,0.75);
     position: absolute;
+    display: flex;
     width:100%;
-    height: 48px;
-    // transition: all .25s ease;
-    display: none;
+    height: 100%;
+    transition: all .35s ease;
+    opacity: 0;
     align-items: center;
     justify-content: center;
     bottom:0;
@@ -154,8 +155,16 @@ html, body, #app { height: 100%;}
     font-family: "Montserrat", sans-serif;
     text-shadow: 0px 1px 2px rgba(0,0,0,0.5);
   }
+
+  .active {
+    .projectOverlay{
+      opacity: 0 !important;
+    }
+  }
+
+
   .projectThumnail:hover .projectOverlay{
-    display: flex;
+    opacity: 1;
   }
 }
 
@@ -226,21 +235,11 @@ html, body, #app { height: 100%;}
 }
 
 .imageHolder{
-  // overflow:hidden;
-  // height: 100%;
-  // position: fixed;
-
-  img{
-    // margin: auto;
-    // min-height: 100%;
-    // left: -1000%;
-    // right: -1000%;
-    // top: -1000%;
-    // bottom: -1000%;
-  }
-
   .videoPlayer{
-    position: relative;
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
     text-align: center;
 
     .controls{
@@ -300,39 +299,29 @@ html, body, #app { height: 100%;}
   }
 
   .imageHolder{
-    // overflow:hidden;
     position: relative;
-    // height: 400px;
-    // width: 100%;
-    // z-index:101;
-
-    img{
-      // position: absolute;
-      // margin: auto;
-      // width:100%;
-      // min-height: 100%;
-      // left: -1000%;
-      // right: -1000%;
-      // top: -1000%;
-      // bottom: -1000%;
-    }
   }
 
   .content{
-    // display: block;
-    // min-height: 0;
-    // z-index: 99;
-
     .section{
       background-color: #fff;
+      padding-bottom: 64px;
 
       .copy{
         padding: 32px 48px;
 
         quote{
           font-weight: bold;
-
         }
+      }
+
+      .copy::after{
+        content: "";
+        display: table;
+        clear: both;
+      }
+      .img-fluid{
+        margin-bottom: 48px;
       }
     }
 

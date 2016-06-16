@@ -1,11 +1,10 @@
 import React from 'react';
-import Breakout from '../../Breakout';
 
 
 import Section from '../show/Section'
-import SectionHeader from '../show/SectionHeader'
-import ContentSplitLeft from '../show/ContentSplitLeft'
-import ContentSplitRight from '../show/ContentSplitRight'
+import CopySplitLeft from '../show/CopySplitLeft'
+import CopySplitRight from '../show/CopySplitRight'
+import Copy from '../show/Copy'
 import ImageFull from '../show/ImageFull'
 import VideoPlayer from '../show/VideoPlayer'
 
@@ -14,19 +13,21 @@ export default React.createClass({
     return (
       <div>
         <Section>
-          <ContentSplitLeft title="ABOUT">
-            Morgans Hotel Group asked for ZAAZ to help "raise the bar" for hotel booking. They had a luxury brand but their booking experience was lacking. I worked on the interaction and motion design for the early concept phases of the project.
-          </ContentSplitLeft>
+          <Copy class="row">
+            <CopySplitLeft title="ABOUT">
+              Morgans Hotel Group asked for ZAAZ to help "raise the bar" for hotel booking. They had a luxury brand but their booking experience was lacking. I worked on the interaction and motion design for the early concept phases of the project.
+            </CopySplitLeft>
 
-          <ContentSplitRight title="ROLE">
-            <ul>
-              <li>Interaction Design</li>
-              <li>Motion Design</li>
-            </ul>
-          </ContentSplitRight>
+            <CopySplitRight title="ROLE">
+              <ul>
+                <li>Interaction Design</li>
+                <li>Motion Design</li>
+              </ul>
+            </CopySplitRight>
+          </Copy>
         </Section>
 
-      
+
 
       </div>
     )

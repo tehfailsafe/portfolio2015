@@ -6,7 +6,7 @@ import * as Content from './content'
 import ProjectImage from './show/ProjectImage'
 import VideoPlayer from './show/VideoPlayer'
 
-
+var TimelineMax = window.GreenSockGlobals.TimelineMax;
 const Project = React.createClass({
   contextTypes: {
     router: React.PropTypes.object
@@ -42,22 +42,42 @@ const Project = React.createClass({
     var pos = this.props.pos
     if(!pos.hasOwnProperty("x")) pos = {x: this.refs.container.offsetLeft, y: this.refs.container.offsetTop, h: this.refs.container.offsetHeight, w: this.refs.container.offsetWidth}
     var containerPos = {x: this.refs.container.offsetLeft, y: this.refs.container.offsetTop + this.state.scrollTop}
+    // TweenMax.fromTo(this.refs.projectContainer, 1, { opacity: 0}, {opacity: 1})
 
-    this.animateCircle(pos, 0.5);
-    TweenMax.from(this.refs.back, .3, { opacity: 0, delay: .5})
+    var scrollTop = window.pageYOffset || document.documentElement.scrollTop
 
-    TweenMax.to(this.refs.circle, 0.55, {opacity: 0, delay: .45})
-    TweenMax.from(this.refs.background, 0, {opacity: 0, delay: .45})
+    // get centerpoint of image
+    var centerPoint ={ x: pos.x + pos.w/2, y: pos.y + pos.h/2 - scrollTop}
 
-    TweenMax.set(this.refs.header, {height: 0})
-    TweenMax.to(this.refs.header, 0.5, {height: 256, y: -250, ease: Power2.easeOut, delay: 0.5})
+    // find distances between center and top left, top right
+    var leftDistance = getDistance(centerPoint, {x: 0, y:0})
+    var rightDistance = getDistance(centerPoint, {x: window.innerWidth, y:0})
 
+    // set radius to larger distance to prevent any corner gaps
+    var radius
+    if(leftDistance > rightDistance){
+      radius = leftDistance
+    } else{
+      radius = rightDistance
+    }
 
+    var tl = new TimelineMax();
+    tl.set(this.refs.header, {height: 0})
+    tl.fromTo(this.refs.projectContainer, .2, {opacity: 0}, {opacity: 1})
+    tl.set(this.refs.circle, { width: radius*2, height: radius*2, top: centerPoint.y - radius, left: centerPoint.x - radius, scale: (pos.h)/(radius*2),backgroundColor: this.props.project.color})
+    tl.to(this.refs.circle, 0.5, {scale: 1,ease: Quad.easeIn})
+    tl.to(this.refs.circle, 0.55, {opacity: 0})
+    tl.from(this.refs.background, 0.1, {opacity: 0}, "-=0.65")
 
-    TweenMax.fromTo(this.refs.projectContainer, .9,
+    tl.fromTo(this.refs.projectContainer, .9,
       { top: pos.y - containerPos.y, left: pos.x - containerPos.x, width: pos.w, height: pos.h},
-      { width: "100%", top: 0, left: 0, ease: Power2.easeInOut, delay: 0, onComplete: this.transitionInComplete })
+      { width: "100%", top: 0, left: 0, ease: Power2.easeInOut, delay: 0, onComplete: this.transitionInComplete },
+      "-=1"
+    )
 
+
+    tl.to(this.refs.header, 0.5, {height: 256, y: -250, ease: Power2.easeOut}, "-=0.5")
+    tl.from(this.refs.back, 0.3, { opacity: 0})
   },
 
 
@@ -136,39 +156,7 @@ const Project = React.createClass({
 
   animateCircle(pos, time){
     // find current scroll position
-    var scrollTop = window.pageYOffset || document.documentElement.scrollTop
 
-    // get centerpoint of image
-    var centerPoint ={ x: pos.x + pos.w/2, y: pos.y + pos.h/2 - scrollTop}
-
-    // find distances between center and top left, top right
-    var leftDistance = getDistance(centerPoint, {x: 0, y:0})
-    var rightDistance = getDistance(centerPoint, {x: window.innerWidth, y:0})
-
-    // set radius to larger distance to prevent any corner gaps
-    var radius
-    if(leftDistance > rightDistance){
-      radius = leftDistance
-    } else{
-      radius = rightDistance
-    }
-
-    // set initial size and position, scaled to 0
-    TweenMax.set(this.refs.circle, {
-      width: radius*2,
-      height: radius*2,
-      top: centerPoint.y - radius,
-      left: centerPoint.x - radius,
-
-      scale: (pos.h)/(radius*2),
-      backgroundColor: this.props.project.color
-    })
-
-    // animate scale to maintain centerpoint
-    TweenMax.to(this.refs.circle, time, {
-      scale: 1,
-      ease: Quad.easeIn
-    })
   },
 
 
@@ -203,7 +191,8 @@ const Project = React.createClass({
                   </div>
 
                   <div className="imageHolder">
-                    <VideoPlayer ref="player" path={projectPath} src="hero.mp4"/>
+                    <img className="img-fluid" src={`${projectPath}/hero.jpg`}/>
+                    <VideoPlayer ref="player" path={projectPath} src="hero.mp4" />
                   </div>
 
 

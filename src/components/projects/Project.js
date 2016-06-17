@@ -190,11 +190,9 @@ const Project = React.createClass({
                     <img src={`${projectPath}/header.jpg`} />
                   </div>
 
-                  <div className="imageHolder">
-                    <img className="img-fluid" src={`${projectPath}/hero.jpg`}/>
-                    <VideoPlayer ref="player" path={projectPath} src="hero.mp4" />
-                  </div>
 
+                  <VideoPlayer ref="player" path={projectPath} poster={`${projectPath}/hero.jpg`} src="hero.mp4" />
+                  <img className="img-fluid cover" src={`${projectPath}/hero.jpg`}/>
 
                   <div ref="content" className="content" style={{ display: this.state.open ? "block" : "none", overflow: "hidden"}}>
                     <Subcontent imagePath={`${projectPath}`} open={this.state.open}/>

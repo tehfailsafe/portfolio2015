@@ -10,6 +10,8 @@ import VideoPlayer from '../show/VideoPlayer'
 
 export default React.createClass({
   render(){
+    var projectPath = this.props.imagePath;
+
     return (
       <div>
         <Section>
@@ -25,6 +27,11 @@ export default React.createClass({
               </ul>
             </CopySplitRight>
           </Copy>
+        </Section>
+
+        <Section>
+          <VideoPlayer ref="player" path={projectPath} src="sketchCalendar.mp4" />
+
         </Section>
 
 

@@ -44,7 +44,11 @@ const VideoPlayer = React.createClass({
             <img onClick={this.play} src="assets/images/play.png" className="controls"/>
           }
         </div>
-        <video ref="video" src={`${this.props.path}/${this.props.src}`} poster={`${this.props.path}/hero.jpg`} className="video"/>
+        {this.props.poster ?
+          <video ref="video" src={`${this.props.path}/${this.props.src}`} poster={`${this.props.poster}`} className="video" loop/>
+        :
+          <video ref="video" src={`${this.props.path}/${this.props.src}`} className="video" loop/>
+        }
       </div>
     )
   }

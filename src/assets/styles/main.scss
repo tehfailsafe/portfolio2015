@@ -234,36 +234,41 @@ html, body, #app { height: 100%;}
   z-index: -1;
 }
 
-.imageHolder{
-  .videoPlayer{
+
+.cover{
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+
+.videoPlayer{
+  z-index: 100;
+  width: 100%;
+  position: relative;
+  text-align: center;
+
+  .controls{
     position: absolute;
-    top:0;
-    left:0;
-    width: 100%;
-    text-align: center;
-
-    .controls{
-      position: absolute;
-      z-index: 100;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      opacity: .5;
-      transition: all 0.35s;
-      cursor: pointer;
-      width: 80px;
-    }
-
-    .pause{
-      opacity: 0;
-    }
+    z-index: 100;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: .5;
+    transition: all 0.35s;
+    cursor: pointer;
+    width: 80px;
   }
-  .videoPlayer:hover{
-    .pause{
-        opacity: .5
-      }
+
+  .pause{
+    opacity: 0;
   }
 }
+.videoPlayer:hover{
+  .pause{
+      opacity: .5
+    }
+}
+
 
 
 .projectShow{
@@ -305,7 +310,9 @@ html, body, #app { height: 100%;}
   .content{
     .section{
       background-color: #fff;
-      padding-bottom: 64px;
+      padding-bottom: 128px;
+      // margin-bottom: 48px;
+      // box-shadow: $shadow2;
 
       .copy{
         padding: 32px 48px;
@@ -330,10 +337,6 @@ html, body, #app { height: 100%;}
       margin-bottom: 200px;
     }
 
-    video{
-      width: 100%;
-      margin-bottom: 40px;
-    }
 
     .bigTitle{
       color: $darkGrey;
@@ -357,7 +360,6 @@ html, body, #app { height: 100%;}
 
     .video{
       margin-bottom: 20px;
-      position:relative; padding-top: 56%;
 
       iframe{
         position:absolute;top:0;left:0;width:100%; height:100%;

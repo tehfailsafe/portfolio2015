@@ -34,12 +34,14 @@ export default React.createClass({
         </Section>
 
         <Section title="Player Menu">
-          <CopySplitLeft>
-            The player bar would be a persistant element at the bottom, allowing quick access to your party, loadouts, profile, and more.
-            <br/><br/>
-            The player bar should be with you at all times, projected directly onto the inside of your visor. I added a spherical effect along with a slight holographic look.
-          </CopySplitLeft>
           <ImageFull src={`${this.props.imagePath}/playerMenu1.jpg`} />
+          <Copy>
+            <CopySplitLeft>
+              The player bar would be a persistant element at the bottom, allowing quick access to your party, loadouts, profile, and more.
+              <br/><br/>
+              The player bar should be with you at all times, projected directly onto the inside of your visor. I added a spherical effect along with a slight holographic look.
+            </CopySplitLeft>
+          </Copy>
         </Section>
 
       </div>

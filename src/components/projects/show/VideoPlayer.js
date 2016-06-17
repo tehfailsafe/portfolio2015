@@ -47,7 +47,7 @@ const VideoPlayer = React.createClass({
         {this.props.poster ?
           <video ref="video" src={`${this.props.path}/${this.props.src}`} poster={`${this.props.poster}`} className="video" loop/>
         :
-          <video ref="video" src={`${this.props.path}/${this.props.src}`} className="video" loop/>
+          <video ref="video" src={`${this.props.path}/${this.props.src}`} className="video" />
         }
       </div>
     )

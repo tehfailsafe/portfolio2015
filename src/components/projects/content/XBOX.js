@@ -66,6 +66,13 @@ export default React.createClass({
           </Copy>
         </Section>
 
+        <Section title="Result">
+          <VideoPlayer scrollPosition={this.props.scrollPosition} path={projectPath} src="xbox_XNE.mp4"/>
+          <Copy class="col-sm-9">
+            After our 4 week sprints were up the XBOX team continued to iterate and implement the ideas. A few months later the XNE dashboard was pushed as an update to XBOX devices. 
+          </Copy>
+        </Section>
+
 
       </div>
     )

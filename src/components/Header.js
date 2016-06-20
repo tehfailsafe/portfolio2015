@@ -38,6 +38,7 @@ const Header = React.createClass({
     return (
       <div className="hero">
           <div id="particles-js" className="particles"></div>
+          <img src="assets/images/stack.png" style={{position: 'absolute', bottom: 16, right: 16, opacity: 0.5}}/>
           <div className="header-content">
             {content}
           </div>

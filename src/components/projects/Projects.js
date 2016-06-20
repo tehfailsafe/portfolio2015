@@ -89,14 +89,14 @@ const Index = React.createClass({
         'color': '#3D8FFF'
       },
       {
-        'id': 'Halo4',
-        'title': 'Halo 4',
-        'color': '#5B45C2'
-      },
-      {
         'id': 'Morgans',
         'title': 'Morgans Hotel Group',
         'color': '#F36400'
+      },
+      {
+        'id': 'AlterEgo',
+        'title': 'Alter Ego Comics',
+        'color': '#3292db'
       },
       {
         'id': 'XBOX',
@@ -110,10 +110,11 @@ const Index = React.createClass({
         'color': '#EC31F3'
       },
       {
-        'id': 'AlterEgo',
-        'title': 'Alter Ego Comics',
-        'color': '#3292db'
+        'id': 'Halo4',
+        'title': 'Halo 4',
+        'color': '#5B45C2'
       },
+
 
     ])
   },

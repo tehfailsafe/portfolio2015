@@ -10,7 +10,7 @@ const Header = React.createClass({
   },
 
   componentDidMount(){
-    particlesJS.load('particles-js', 'assets/particles.json');
+   particlesJS.load('particles-js', 'assets/particles.json');
   },
 
   togglePlay(){

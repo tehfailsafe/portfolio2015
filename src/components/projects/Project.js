@@ -22,7 +22,16 @@ const Project = React.createClass({
   componentDidMount(){
     this.context.router.setRouteLeaveHook(this.props.route, this.routerWillLeave)
     this.transitionIn()
+    this.refs.projectShow.addEventListener('scroll', this.handleScroll)
   },
+
+  handleScroll(event){
+    this.setState({
+      scrollPosition: this.refs.projectShow.scrollTop
+    })
+    // console.log(this.state.scrollPosition);
+  },
+
 
   routerWillLeave(nextLocation) {
     if(this.state.open){
@@ -42,7 +51,6 @@ const Project = React.createClass({
     var pos = this.props.pos
     if(!pos.hasOwnProperty("x")) pos = {x: this.refs.container.offsetLeft, y: this.refs.container.offsetTop, h: this.refs.container.offsetHeight, w: this.refs.container.offsetWidth}
     var containerPos = {x: this.refs.container.offsetLeft, y: this.refs.container.offsetTop + this.state.scrollTop}
-    // TweenMax.fromTo(this.refs.projectContainer, 1, { opacity: 0}, {opacity: 1})
 
     var scrollTop = window.pageYOffset || document.documentElement.scrollTop
 
@@ -71,7 +79,7 @@ const Project = React.createClass({
 
     tl.fromTo(this.refs.projectContainer, .9,
       { top: pos.y - containerPos.y, left: pos.x - containerPos.x, width: pos.w, height: pos.h},
-      { width: "100%", top: 0, left: 0, ease: Power2.easeInOut, delay: 0, onComplete: this.transitionInComplete },
+      { width: "100%", top: 0, left: 0, ease: Power2.easeInOut, onComplete: this.transitionInComplete },
       "-=1"
     )
 
@@ -176,7 +184,6 @@ const Project = React.createClass({
               </Link>
             </div>
           </div>
-
           <div className="imageHolder">
             <img ref="background" className="backgroundImage" src={`${projectPath}/background.jpg`} />
           </div>
@@ -187,15 +194,15 @@ const Project = React.createClass({
               <div  className="row">
                 <div ref="projectContainer" style={{position: "relative"}}>
                   <div ref="header" className="header">
-                    <img src={`${projectPath}/header.jpg`} />
+                    <img src={`${projectPath}/header.jpg`} className="img-fluid" style={{position: "absolute", bottom: 0}}/>
                   </div>
 
 
-                  <VideoPlayer ref="player" path={projectPath} poster={`${projectPath}/hero.jpg`} src="hero.mp4" />
+                  <VideoPlayer ref="player" stopAutoPlay={true} path={projectPath} poster={`${projectPath}/hero.jpg`} src="hero.mp4" />
                   <img className="img-fluid cover" src={`${projectPath}/hero.jpg`}/>
 
                   <div ref="content" className="content" style={{ display: this.state.open ? "block" : "none", overflow: "hidden"}}>
-                    <Subcontent imagePath={`${projectPath}`} open={this.state.open}/>
+                    <Subcontent scrollPosition={this.state.scrollPosition} imagePath={`${projectPath}`} open={this.state.open}/>
                   </div>
 
                 </div>

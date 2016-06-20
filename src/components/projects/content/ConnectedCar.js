@@ -14,7 +14,9 @@ const Car = React.createClass({
         <Section>
           <Copy class="row">
             <CopySplitLeft title="ABOUT">
-              Microsoft has been supporting Ford and the SYNC in vehicle infotainment system. There have been several major version updates and I worked on the <quote>Gen 3</quote> version. Due to NDA I can't say too much about the project, but I can show the following public images and video.
+              Microsoft has been supporting Ford and the SYNC in vehicle infotainment system. There have been several major version updates and I worked on the <quote>Gen 3</quote> version. Due to NDA I can't say too much about the project, but I can show a few of the public images and videos.
+              <br/><br/>
+              I was responsible for building fully functional prototypes to meet the needs of our user research team. We ran monthly usability tests in a driving simulator using the prototypes. I worked with the designers to help identify problem areas, flesh out ideas, and find out what the real question was behind the design to allow me to focus on that problem. I would then build a scenario to explore that aspect of the UI and help define research questions to validate the usability and safety of the design.
             </CopySplitLeft>
 
             <CopySplitRight title="ROLE">
@@ -29,10 +31,6 @@ const Car = React.createClass({
 
         <Section title="Main Menu" >
           <ImageFull src={`${this.props.imagePath}/menu1.jpg`} />
-          <Copy>
-            We practiced a disciplined design led approach to ensure safety and produce measurable UI quality. User data was the lifeblood for design decisions, running monthly usability tests in our simulator.
-          </Copy>
-
 
         </Section>
 

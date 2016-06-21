@@ -364,7 +364,7 @@ html, body, #app { height: 100%;}
     }
   }
 }
-.row.no-gutters > [class*="col-"] {
+.no-gutters > [class*="col-"] {
   padding-right: 0;
   padding-left: 0;
 }

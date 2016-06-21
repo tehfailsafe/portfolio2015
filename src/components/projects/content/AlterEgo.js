@@ -13,7 +13,7 @@ export default React.createClass({
       <div>
         <Section>
             <Copy class="col-sm-9">
-              <h4>ABOUT</h4>
+              <h4>About</h4>
               In 2012 I opened a comic book store in the Crossroads Mall, Bellevue. The staple of comic book stores is the subscription model: customers can request reserved copies of specific titles. If they can't make it in on release day they have a guarunteed copy in a special hold box, even if the store sells out.
               <br/><br/>
               We quickly discovered the difficulty in keeping customer subscriptions in sync with order quantites. After paper forms and Excel proved ineffective, I built out my own database backed subscription application to support our customers. They can log in, check their lists, see what's actually in their boxes, and get email notifications when new issues arrive. All while helping me keep track of our stores orders and demand.

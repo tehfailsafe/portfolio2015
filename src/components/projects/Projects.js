@@ -22,6 +22,7 @@ const Index = React.createClass({
 
 	componentDidMount(){
     imagesLoaded( this.refs.grid, () => {
+      console.log("pack");
       this.state.packary.layout();
     })
 
@@ -73,7 +74,7 @@ const Index = React.createClass({
           this.props.children
         }
         <div className="projects-index">
-          <div ref="grid" className='row no-gutters grid'>
+          <div ref="grid" className=' no-gutters grid'>
             {projects}
           </div>
         </div>

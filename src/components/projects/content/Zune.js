@@ -82,7 +82,7 @@ export default React.createClass({
         </Section>
 
         <Section title="Results">
-          <VideoPlayer scrollPosition={this.props.scrollPosition} path={projectPath} src="zune_07.mp4"/>
+          <VideoPlayer scrollPosition={this.props.scrollPosition} path={projectPath} src="zune_demo.mp4"/>
           <Copy class="col-sm-9">
             The team continued to iterate and really polished up some of the thinking. You can start to see the building blocks that later became the Metro design language, heavily influencing Windows and Windows Mobile.
           </Copy>

@@ -18,7 +18,7 @@ export default React.createClass({
             <Copy class="col-sm-9">
               <h4>About</h4>
 
-              When 343 took over the Halo franchise from Bungie they wanted a new interface for their first installment title. Some of the challenges were to make the main menu more immersive and less like an afterthought. How can it feel like it's part of the storyline? With weekly mission updates and new scenarios, how can it flow with cutscenes and really bring that new content to players?
+              When 343 took over the Halo franchise from Bungie they wanted a new interface for their first installment title. Some of the challenges were to make the main menu more immersive and engaging. How can it feel like it's part of the storyline? With weekly mission updates and new scenarios, how can it flow with cutscenes and really bring that new content to players?
               <br/><br/>
               I worked with another talented designer on weekly iteration sprints with the 343 engineering and story team. We developed many concepts and a full end to end prototype that was fully user tested.
             </Copy>

@@ -19,7 +19,7 @@ export default React.createClass({
             <h4>About</h4>
             Morgans Hotel Group is a luxury botique hotel brand. Online booking is pretty standardized and cookie-cutter. How can a global brand that relies on status differentiate itself? They turned to ZAAZ to help redefine their online presence.
             <br/><br/>
-            My role on the team was primarily interaction design and motion. I helpd define the date selection interaciton, split views play/stay concept, live updates, and rich full screen lifestyle imagery. I worked directly with the client for feedback and revisions, participated in user tests  in order to respond to the results, and worked with the engineering team to help bring the front end to final production.
+            My role on the team was primarily interaction design and motion. I helped define the date selection interaciton, split views play/stay concept, live updates, and rich full screen lifestyle imagery. I worked directly with the client for feedback and revisions, participated in user tests  in order to respond to the results, and worked with the engineering team to help bring the front end to final production.
           </Copy>
 
           <Copy class="col-sm-3">

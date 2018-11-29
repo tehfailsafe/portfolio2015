@@ -30,7 +30,7 @@ const Header = React.createClass({
         <div className="col-md-10" style={{paddingLeft: 64}}>
           <p style={{fontWeight: 700, marginBottom: -8}}>Hello.</p>
           <p style={{fontWeight: 700, marginBottom: 48}}>My Name is Mike Johnson.</p>
-          <p style={{fontSize: 24}}>I am a UX Engineer specializing in motion design, prototypes, and user testing.</p>
+          <p style={{fontSize: 24}}>I am an interaction designer specializing in motion, prototypes, and user testing.</p>
         </div>
       )
     }

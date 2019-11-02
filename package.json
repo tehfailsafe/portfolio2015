@@ -30,7 +30,7 @@
     "imagesloaded": "^3.2.0",
     "img-loader": "^1.2.2",
     "imports-loader": "^0.6.5",
-    "jquery": "^2.1.4",
+    "jquery": "^3.4.1",
     "matches-selector": "^1.0.0",
     "material-design-lite": "^1.0.6",
     "navigator": "^1.0.1",
